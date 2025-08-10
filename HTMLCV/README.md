@@ -44,5 +44,5 @@ By completing this project, you will:
 6. Organize content into sections for education, skills, and career history.
 7. Validate your HTML using a tool like the W3C Markup Validator to ensure correctness.
 
-## Projetct URL
+## Project URL
 https://roadmap.sh/projects/single-page-cv

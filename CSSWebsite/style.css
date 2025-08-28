@@ -1,0 +1,228 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+ul,li{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+
+h1,h2,h3,h4,h5,h6{
+    font-family: "Patrick Hand", cursive;
+    font-style: normal;
+}
+
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  padding: 1rem;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+header img {
+  width: 50px;
+  height: 50px;
+  background: #333; /* substitua pela logo */
+  border-radius: 50%;
+}
+
+a{
+  text-decoration: none;
+}
+
+/* Navbar com divisória */
+nav a {
+  margin: 0 0.5rem;
+  color: #000;
+  position: relative;
+  padding: 0 0.5rem;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  right: -0.5rem;
+  top: 50%;
+  transform: translateY(-50%) rotate(20deg);
+  width: 1px;
+  height: 16px;
+  background: #000;
+}
+
+nav a:last-child::after {
+  display: none;
+}
+
+.intro {
+  text-align: center;
+  margin-bottom: 2rem;
+  padding: 64px;
+}
+
+.intro h1{
+    font-size: 64px;
+}
+
+.intro p{
+    color: #8d8c8c;
+}
+
+/* Grid flexível para as seções principais */
+.grid {
+  display: grid;
+  border: black solid 2px;
+  grid-template-columns: 1fr 2fr 1fr;
+}
+
+.projects h2{
+  margin-bottom: 16px;
+  padding: 16px;
+}
+
+.projects ul li {
+  border-bottom: black solid 2px;
+  padding: 8px;
+}
+
+.projects ul > li:nth-child(5){
+  border-bottom: none;
+}
+
+.experience h2{
+  padding: 16px;
+}
+
+.experience{
+  border-left: black solid 2px;
+  border-right: black solid 2px;
+}
+
+.work-experience{
+  padding: 16px;
+  border-bottom: black solid 2px;
+}
+
+.opensource{
+  padding: 16px;
+  border-bottom: transparent;
+}
+
+.education{
+  padding: 16px;
+}
+
+
+
+
+
+/* Reviews com flexbox */
+.reviews{
+    margin-top: 2rem;
+}
+.reviews h2{
+    margin-left: 32px;
+    padding: 16px;
+}
+.review-content{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.review{
+    border: black solid 2px;
+    padding: 16px;
+    border-radius: 16px;
+    width: 400px;
+    margin: 0 auto;
+}
+
+.review p {
+  margin-bottom: 0.5rem;
+}
+
+
+footer {
+  text-align: center;
+  margin-top: 5rem;
+}
+
+/* 📱 Responsividade - versão mobile igual ao layout da esquerda */
+@media (max-width: 768px) {
+  header{
+    flex-direction: column;
+  }
+
+  .intro h1 {
+    font-size: 32px;
+  }
+
+
+  .projects h2{
+    text-align: center;
+    background-color: #ffff;
+    padding: 0px;
+  }
+
+  .projects ul li{
+    text-align: center;
+  }
+
+  .projects ul li:nth-child(1){
+    border-top: black  solid 2px;
+  }
+  .projects ul li:nth-child(5){
+    border-bottom: black  solid 2px;
+  }
+
+  .experience{
+    border-left: none;
+    border-right: none;
+  }
+
+  .experience h2{
+    text-align: center;
+  }
+
+  .experience article{
+    background: #f0f0f0;
+    border-top: black solid 2px;
+    border-bottom: black solid 2px;
+  }
+
+  .education h2{
+    text-align: center;
+    margin-bottom: 16px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .projects ul li {
+    background: #f0f0f0; /* cinza no mobile */
+  }
+
+  .review-content{
+    gap: 16px;
+  }
+
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+
+  nav a {
+    margin: 0.5rem;
+  }
+}

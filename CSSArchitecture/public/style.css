@@ -1,0 +1,93 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f4f8;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem;
+}
+
+.header {
+    width: 100%;
+    background-color: #b0e0e6;
+    height: 60px;
+    margin-bottom: 2rem;
+    border-radius: 8px 8px 0 0;
+}
+
+.header-title {
+    text-align: center;
+    font-size: 1.5rem;
+    color: #333;
+    font-weight: 600;
+    margin: 0;
+    padding: 20px 0;
+}
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.css-input {
+    width: 100%;
+    height: 300px;
+    padding: 1rem;
+    border: 2px solid #b0e0e6;
+    border-radius: 10px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    resize: vertical;
+    outline: none;
+    transition: border-color 0.3s;
+}
+
+.css-input:focus {
+    border-color: #4682b4;
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+}
+
+.architecture-selector,
+.validate-button {
+    width: 250px;
+    padding: 0.75rem;
+    border: 2px solid #b0e0e6;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    text-align: center;
+}
+
+.validate-button {
+    background-color: #4682b4;
+    color: #ffffff;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.validate-button:hover {
+    background-color: #3a6890;
+}

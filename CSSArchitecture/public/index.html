@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Architecture Validator</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <header class="header">
+            <h1 class="header-title">Architecture Validator</h1>
+        </header>
+
+        <main class="main-content">
+            <textarea class="css-input" placeholder="Type your CSS Code here...."></textarea>
+
+            <div class="controls">
+                <select class="architecture-selector">
+                    <option value="" disabled selected>select your architecture</option>
+                    <option value="bem">BEM</option>
+                    <option value="smacss">SMACSS</option>
+                    <option value="oocss">OOCSS</option>
+                </select>
+
+                <button class="validate-button">Validate</button>
+            </div>
+        </main>
+    </div>
+
+</body>
+</html>

@@ -675,9 +675,7 @@ Contribuições são bem-vindas! Para contribuir:
 
 Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](LICENSE) para detalhes.
 
-## 👥 Autores
 
-- **Seu Nome** - *Trabalho inicial* - [SeuGitHub](https://github.com/seu-usuario)
 
 ## 🙏 Agradecimentos
 
@@ -686,13 +684,7 @@ Este projeto está licenciado sob a **MIT License** - veja o arquivo [LICENSE](L
 - VirtualBox pela virtualização
 - Todos que contribuíram com feedback e sugestões
 
-## 📞 Suporte
 
-Para dúvidas e suporte:
-
-- **Issues**: [GitHub Issues](https://github.com/seu-usuario/mini-internet/issues)
-- **Wiki**: [Documentação Completa](https://github.com/seu-usuario/mini-internet/wiki)
-- **Email**: seu.email@exemplo.com
 
 ---
 

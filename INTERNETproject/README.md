@@ -21,9 +21,10 @@ Este projeto tem como objetivo simular uma mini internet utilizando máquinas vi
 ## Como Executar
 
 1. Clone este repositório.
-2. Siga as instruções do arquivo `setup.md` (ou outro arquivo de instruções) para criar e configurar as máquinas virtuais.
-3. Execute os scripts de configuração para montar a topologia de rede desejada.
-4. Realize testes de conectividade e serviços entre as VMs.
+2. Siga as instruções do arquivo `mini_internet_readme.md` para criar e configurar as máquinas virtuais.
+3. Siga as instruções do arquivo `ca_complete_readme.md` para criar e ajustar uma autoridade certificadora que emite certificados ssl validos.
+4. Instale o mini_browser no cliente caso queira ver a implementação de um browser simples usando python.
+5. Realize testes de conectividade e serviços entre as VMs.
 
 ## Objetivos de Aprendizagem
 

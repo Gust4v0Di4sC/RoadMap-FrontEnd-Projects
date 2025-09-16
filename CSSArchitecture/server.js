@@ -1,5 +1,6 @@
 // server.js
 const express = require('express');
+const cors = require('cors'); // Importe o CORS
 const postcss = require('postcss');
 const path = require('path');
 
@@ -13,6 +14,7 @@ const validateSmacss = require('./postcss-plugins/validate-smacss');
 const validateOocss = require('./postcss-plugins/validate-oocss');
 
 // Middlewares
+app.use(cors()); 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json()); // Para receber dados JSON do front-end
 

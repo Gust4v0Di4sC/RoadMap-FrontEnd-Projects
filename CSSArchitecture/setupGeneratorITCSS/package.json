@@ -1,0 +1,26 @@
+{
+  "name": "itcss-cli",
+  "version": "1.0.2",
+  "description": "A CLI to generate a ITCSS folder structure.",
+  "main": "index.js",
+  "bin": {
+    "itcss-cli": "./bin/cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "itcss",
+    "css",
+    "architecture",
+    "cli"
+  ],
+  "author": "Gustavo Dias",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^5.1.0",
+    "postcss": "^8.5.6"
+  }
+}

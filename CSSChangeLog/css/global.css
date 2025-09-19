@@ -1,0 +1,39 @@
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
+
+.changelog-container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 40px;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Centraliza o cabeçalho */
+}
+
+.changelog-header h1 {
+  font-size: 2.5em;
+  font-weight: 600;
+  color: #1a1a1a;
+}
+.changelog-header p {
+  color: #666;
+  margin-top: -10px;
+}
+
+.changelog-footer button{
+    border-radius: 8px;
+    border: none;
+    background-color: #1a1a1a;
+    padding: 12px 32px;
+    color: #fff;
+    transition:all ease-in-out 0.3s;
+}
+
+.changelog-footer button:hover{
+    background-color: #424242;
+}

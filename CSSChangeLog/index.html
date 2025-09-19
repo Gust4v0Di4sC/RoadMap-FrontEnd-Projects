@@ -5,51 +5,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Changelog Component</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
-    <section class="changelog">
-        <article class="changelog-title">
+    <div class="changelog-container">
+        <div class="changelog-header">
             <h1>Changelog</h1>
-            <p>here's everything we have shipped in the past few days</p>
-        </article>
-
-        <div class="changelog-timeline">
+            <p>Aqui está tudo o que lançamos nos últimos dias</p>
+        </div>
+        <div class="timeline">
             <ul>
                 <li>
-                    <time datetime="2024-09-03">September 3, 2024</time>
-                    <span>Announcing Projects on Frontend Roadmap</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">3 de setembro de 2024</div>
+                    <div class="timeline-content">Announcing Projects on Frontend Roadmap</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-28">August 28, 2024</time>
-                    <span>Build your learning habits with learning streaks</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">28 de agosto de 2024</div>
+                    <div class="timeline-content">Build your learning habits with learning streaks</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-25">August 25, 2024</time>
-                    <span>Git and GitHub Roadmap</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">3 de setembro de 2024</div>
+                    <div class="timeline-content">Git and Github Roadmap</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-22">August 22, 2024</time>
-                    <span>Submit your project solution and get feedback</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">28 de agosto de 2024</div>
+                    <div class="timeline-content">Submit your project solution and get feedback</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-15">August 15, 2024</time>
-                    <span>Backend Project Ideas</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">3 de setembro de 2024</div>
+                    <div class="timeline-content">Backend Project Ideas</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-10">August 10, 2024</time>
-                    <span>Redis roadmap</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">28 de agosto de 2024</div>
+                    <div class="timeline-content">Redis Roadmap</div>
                 </li>
                 <li>
-                    <time datetime="2024-08-01">August 1, 2024</time>
-                    <span>Changelog page to help you stay in the loop</span>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-date">28 de agosto de 2024</div>
+                    <div class="timeline-content">Changelog to help you stay in the loop</div>
                 </li>
             </ul>
         </div>
-
-        <button class="changelog-button">Visit Complete Changelog</button>
-    </section>
+        <div class="changelog-footer">
+            <button>Visitar o Changelog Completo</button>
+        </div>
+    </div>
 </body>
 
 </html>

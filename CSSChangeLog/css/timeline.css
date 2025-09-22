@@ -25,7 +25,8 @@
   padding: 24px;
   justify-content: center;
   align-items: center;
-  margin-bottom: 25px; /* Espaçamento entre os itens */
+  margin-bottom: 25px; 
+  
 }
 
 .timeline-dot {
@@ -38,12 +39,29 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1;
+  transition:all ease-in-out 0.3s;
 }
 
 .timeline-dot:hover {
   width: 24px;
   height: 24px;
+  background-color: #ffff;
+  border: black solid 2px;
 }
+
+
+.timeline li:hover .timeline-dot {
+  width: 24px;
+  height: 24px;
+  background-color: #ffff;
+  border: black solid 2px;
+}
+
+.timeline li:hover .timeline-content {
+  font-weight: bold; 
+}
+
+
 
 .timeline-date {
   position: absolute;

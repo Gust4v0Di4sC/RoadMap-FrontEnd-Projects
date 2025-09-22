@@ -4,6 +4,8 @@ body {
   color: #333;
 }
 
+
+
 .changelog-container {
   max-width: 800px;
   margin: 40px auto;
@@ -15,6 +17,10 @@ body {
   text-align: center; /* Centraliza o cabeçalho */
 }
 
+.changelog-header{
+  margin-bottom: 64px;
+}
+
 .changelog-header h1 {
   font-size: 2.5em;
   font-weight: 600;
@@ -23,6 +29,10 @@ body {
 .changelog-header p {
   color: #666;
   margin-top: -10px;
+}
+
+.changelog-footer{
+  margin-top: 64px;
 }
 
 .changelog-footer button{

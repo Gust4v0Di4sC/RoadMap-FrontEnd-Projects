@@ -1,5 +1,5 @@
 body {
-    background-color: #242424;
+    background-color: #ffffff;
     font-family: 'Inter', Arial, sans-serif;
     display: flex;
     justify-content: center;
@@ -22,14 +22,39 @@ body {
     background-color: #1a1a1a;
     padding: 12px 32px;
     border-radius: 16px;
+    position: relative;
+}
+
+.testimonial-quote.card-one::before {
+    content: '';
+    position: absolute;
+    bottom: -12px; /* Posição na parte inferior do card */
+    left: 20px; /* Alinha a ponta com a área da imagem do autor */
+    width: 0;
+    height: 0;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-top: 15px solid #1a1a1a; /* Cor de fundo do balão */
+}
+
+.author-info.card-one p{
+    color: #141414;
 }
 
 
-
-.author-info.card-one{
-    background-color: transparent;
+.testimonial-card.card-two{
+    background: #ffffff;
+    border: 2px solid black;
+    width: 500px;
 }
 
+.testimonial-quote.card-two p{
+    color: #141414;
+}
+
+.author-details.card-two p{
+    color: #141414;
+}
 
 
 
@@ -107,52 +132,42 @@ body {
 }
 
 /* Estilos específicos do card da Jackie Mackle */
-.testimonial-center {
-    background-color: #141414;
-    color: #fff;
-    padding-top: 50px;
+/* 1. O Contêiner Principal: Ativa o Flexbox */
+.testimonial-card-three {
+    display: flex; /* ESSENCIAL: Coloca os filhos (imagem e texto) lado a lado */
+    gap: 20px; /* Adiciona um espaço entre a imagem e o texto */
+    
+    /* Configurações extras para visualização (opcional) */
+    max-width: 800px;
+    margin: 50px auto; /* Centraliza o contêiner na página */
+    padding: 20px;
+    border: 1px solid #ccc; /* Borda para ver os limites */
+    font-family: Arial, sans-serif;
 }
 
-.stars {
-    color: #FFD700;
-    font-size: 1.8rem;
-    margin-bottom: 12px;
-    letter-spacing: 2px;
+/* 2. O Bloco da Imagem */
+.image-block {
+    /* Define que a imagem deve ocupar um espaço fixo ou uma proporção (ex: 30%) */
+    flex: 0 0 30%; /* Não cresce, não encolhe, base de 30% da largura do contêiner */
+    max-width: 700px; /* Limita a largura máxima da imagem, se desejar */
 }
 
-.author-info-large {
-    display: flex;
-    align-items: center;
-    margin-bottom: 16px;
+.image-block img {
+    width: 400px; /* Faz a imagem preencher o espaço do bloco */
+    height: auto;
+    display: block;
+    border-radius: 8px; /* Bordas arredondadas (opcional) */
 }
 
-.author-img-large {
-    width: 70px;
-    height: 70px;
-    border-radius: 50%;
-    margin-right: 16px;
-    border: 3px solid #666;
+/* 3. O Bloco de Texto */
+.text-block {
+    /* Define que o texto deve ocupar o espaço restante */
+    flex: 1; /* Permite que o texto cresça e ocupe o espaço livre */
+    padding-left: 10px; /* Pequeno espaçamento (opcional, mas bom para leitura) */
 }
 
-.author-details-large {
-    line-height: 1.3;
-}
-
-.author-name-large {
-    font-weight: 700;
-    font-size: 1.3rem;
-    color: #fff;
-}
-
-.author-title-large {
-    font-size: 1rem;
-    color: #aaa;
-}
-
-.testimonial-quote-large p {
-    font-size: 1.1rem;
-    line-height: 1.6;
-    color: #e0e0e0;
+.text-block h2 {
+    margin-top: 0;
 }
 
 /* Estilos do card de texto inferior */

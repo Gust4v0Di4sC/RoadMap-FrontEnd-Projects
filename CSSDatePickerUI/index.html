@@ -1,22 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Date Picker UI</title>
+    <title>Datepicker Estático</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div>
-      <input type="text" placeholder="dd/mm/yyyy">
-      <button>🗓️</button>  
+
+    <div class="datepicker-container">
+        <div class="input-group">
+            <input type="text" placeholder="dd / mm / yyyy" class="date-input">
+            <button class="calendar-icon-button">
+                📅
+            </button>
+        </div>
+
+        <div class="calendar-dropdown">
+            
+            <table class="calendar-grid">
+                <thead>
+                    <div class="calendar-header">
+                        <button class="nav-arrow">&lt;</button>
+                        <div class="current-month-year">Dezembro 2022</div>
+                        <button class="nav-arrow">&gt;</button>
+                    </div>
+                    <tr>
+                        <th>S</th>
+                        <th>M</th>
+                        <th>T</th>
+                        <th>W</th>
+                        <th>T</th>
+                        <th>F</th>
+                        <th>S</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="empty-day"></td>
+                        <td class="empty-day"></td>
+                        <td class="empty-day"></td>
+                        <td class="empty-day"></td>
+                        <td>1</td>
+                        <td>2</td>
+                        <td>3</td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>5</td>
+                        <td>6</td>
+                        <td>7</td>
+                        <td>8</td>
+                        <td>9</td>
+                        <td>10</td>
+                    </tr>
+                    <tr>
+                        <td>11</td>
+                        <td>12</td>
+                        <td>13</td>
+                        <td>14</td>
+                        <td>15</td>
+                        <td>16</td>
+                        <td>17</td>
+                    </tr>
+                    <tr>
+                        <td>18</td>
+                        <td>19</td>
+                        <td>20</td>
+                        <td>21</td>
+                        <td>22</td>
+                        <td>23</td>
+                        <td>24</td>
+                    </tr>
+                    <tr>
+                        <td>25</td>
+                        <td>26</td>
+                        <td>27</td>
+                        <td>28</td>
+                        <td>29</td>
+                        <td>30</td>
+                        <td>31</td>
+                    </tr>
+                    </tbody>
+            </table>
+        </div>
     </div>
-    
-    <section class="calendar-section">
-        <table>
-            <th>S M T W T F S</th>
-            <td></td>
-        </table>
-    </section>
-    
+
 </body>
 </html>

@@ -1,0 +1,18 @@
+thead{
+    border: 2px solid black ;
+}
+
+.datepicker-container{
+    padding: 12px;
+}
+
+.calendar-dropdown{
+    border: 2px solid black;
+    width: 190px;
+}
+
+.calendar-header{
+    display: flex;
+    justify-content: space-around;
+    padding: 8px;
+}

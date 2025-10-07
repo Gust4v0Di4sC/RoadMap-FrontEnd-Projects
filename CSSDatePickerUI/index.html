@@ -4,15 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Datepicker Estático</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="datepicker-container">
+    <main>
+      <div class="datepicker-container">
         <div class="input-group">
             <input type="text" placeholder="dd / mm / yyyy" class="date-input">
             <button class="calendar-icon-button">
-                📅
+                <span class="material-icons">
+                    calendar_today
+                </span>
             </button>
         </div>
 
@@ -84,7 +93,9 @@
                     </tbody>
             </table>
         </div>
-    </div>
+    </div>  
+    </main>
+    
 
 </body>
 </html>

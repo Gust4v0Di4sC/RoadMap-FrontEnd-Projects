@@ -1,9 +1,76 @@
-thead{
-    border: 2px solid black ;
+
+
+body {
+    font-family: 'Balsamiq Sans', sans-serif; 
+    display: flex;
+    min-height: 100vh;
+    margin: 0;
+    justify-content: center;
+    align-content: center;
+}
+
+.material-icons{
+    font-size: 15px;
 }
 
 .datepicker-container{
-    padding: 12px;
+    position: relative;
+    width: 250px;
+    margin: 20px;
+}
+
+.input-group{
+    margin-bottom: 8px;
+}
+
+.input-group input{
+    padding: 4px;
+    border: 2px solid black;
+    border-radius: 8px;
+}
+
+.input-group button{
+    padding: 4px;
+    border: 2px solid black;
+    border-radius: 8px;
+    background-color: transparent;
+    font-size: 8px;
+}
+
+.calendar-header button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.calendar-grid{
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+
+.calendar-grid th{
+    font-size: 1rem;
+    padding: 5px 0;
+    text-transform: uppercase;
+    color: #555;
+    font-weight: normal;
+}
+
+.calendar-grid td{
+    border-top: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 1px solid black;
+    padding: 8px 0;
+    font-size: 1rem;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.calendar-grid td.empty-day{
+    background-color: #f7f7f7;
+    cursor: default;
 }
 
 .calendar-dropdown{

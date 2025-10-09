@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acessible Form UI</title>
+</head>
+<body>
+    <form action="post">
+        <label for="name"> Name:
+            <input type="text" id="name" required autocomplete="name">
+        </label>
+
+        <label for="email">E-mail:
+            <input type="email" name="" id="email" required autocomplete="email" aria-required="true" aria-describedby="email-error">
+        </label>
+
+        <label for="password">Password: 
+            <input type="password" name="" id="password" required autocomplete="new-password">
+            <button type="button" aria-label="Alternar visibilidade da senha" aria-pressed="false" id="toggle-password">👁️</button>
+        </label>
+
+        <label for="confirm-password">Confirm Password:
+            <input type="password" name="" id="confirm-password" required autocomplete="new-password">
+        </label>
+
+        <button type="submit">Update Profile</button>
+    </form>
+
+    <aside class=" completeness-sidebar" aria-labelledby="completeness-title">
+        <progress id="completeness" value="65" max="100">65%</progress>
+
+        <h1>Profile Completeness</h1>
+        <ul>
+            <li aria-checked="true" role="checkbox">Create Account</li>
+            <li aria-checked="true" role="checkbox">Update Roadmap Progress</li>
+            <li aria-checked="true" role="checkbox">Setup Public Profile</li>
+            <li aria-checked="true" role="checkbox">Complete your first project</li>
+            <li aria-checked="true" role="checkbox">Invite your Friends</li>
+        </ul>
+    </aside>
+</body>
+</html>

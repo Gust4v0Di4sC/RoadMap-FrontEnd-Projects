@@ -4,40 +4,77 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Acessible Form UI</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <form action="post">
-        <label for="name"> Name:
-            <input type="text" id="name" required autocomplete="name">
-        </label>
+    <div class="form-container">
+        <div class="form-layout">
+            <form action="post">
+                <label for="name"> Full Name
+                    <input type="text" id="name" required autocomplete="name" placeholder="What should we call you?">
+                </label>
+    
+                <label for="email">Email
+                    <input type="email" name="" id="email" required autocomplete="email" aria-required="true"
+                        aria-describedby="email-error" placeholder="john@doe.com">
+                </label>
+    
+                <div class="field-group">
+                    <label for="password">Password</label>
+                    <div class="input-with-icon">
+                        <input type="password" name="" id="password" required autocomplete="new-password" placeholder="xxxxxxx">
+                        <button type="button" aria-label="Alternar visibilidade da senha" aria-pressed="false" id="toggle-password">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                    </div>
+                </div>
 
-        <label for="email">E-mail:
-            <input type="email" name="" id="email" required autocomplete="email" aria-required="true" aria-describedby="email-error">
-        </label>
 
-        <label for="password">Password: 
-            <input type="password" name="" id="password" required autocomplete="new-password">
-            <button type="button" aria-label="Alternar visibilidade da senha" aria-pressed="false" id="toggle-password">👁️</button>
-        </label>
-
-        <label for="confirm-password">Confirm Password:
-            <input type="password" name="" id="confirm-password" required autocomplete="new-password">
-        </label>
-
-        <button type="submit">Update Profile</button>
-    </form>
-
-    <aside class=" completeness-sidebar" aria-labelledby="completeness-title">
-        <progress id="completeness" value="65" max="100">65%</progress>
-
-        <h1>Profile Completeness</h1>
-        <ul>
-            <li aria-checked="true" role="checkbox">Create Account</li>
-            <li aria-checked="true" role="checkbox">Update Roadmap Progress</li>
-            <li aria-checked="true" role="checkbox">Setup Public Profile</li>
-            <li aria-checked="true" role="checkbox">Complete your first project</li>
-            <li aria-checked="true" role="checkbox">Invite your Friends</li>
-        </ul>
-    </aside>
+                <div class="field-group">
+                    <label for="password">Confirm Password</label>
+                    <div class="input-with-icon">
+                        <input type="password" name="" id="confirm-password" required autocomplete="new-password" placeholder="xxxxxxx">
+                        <button type="button" aria-label="Alternar visibilidade da senha" aria-pressed="false" id="toggle-password">
+                            <span class="material-symbols-outlined">
+                                visibility
+                            </span>
+                        </button>
+                    </div>
+                </div>
+                
+                <button type="submit">Update Profile</button>
+            </form>
+    
+            <aside class=" completeness-sidebar" aria-labelledby="completeness-title">
+                <div class="progress-circle" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <p>65%</p>
+                </div>
+    
+                <h1>Profile Completeness</h1>
+    
+                <div class="checklist-container">
+                    <ul>
+                        <li aria-checked="true" role="checkbox">Create Account</li>
+                        <li aria-checked="true" role="checkbox">Update Roadmap Progress</li>
+                        <li aria-checked="true" role="checkbox">Setup Public Profile</li>
+                        <li aria-checked="true" role="checkbox">Complete your first project</li>
+                        <li aria-checked="true" role="checkbox">Invite your Friends</li>
+                    </ul>
+                </div>
+    
+            </aside>
+        </div>
+    
+    </div>
+    
 </body>
 </html>

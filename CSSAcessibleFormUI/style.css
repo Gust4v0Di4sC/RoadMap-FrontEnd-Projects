@@ -1,0 +1,237 @@
+:root {
+    --clr-background: #ffffff;
+    --clr-text-primary: #1c1c1c;
+    --clr-text-secondary: #d8d8d8;
+    --clr-border: #a0a0a0;
+    --clr-error: #ff0000;
+    --clr-progress-done: #1c1c1c;
+    --clr-progress-pending: #e0e0e0;
+    --clr-background-aside: #a0a0a0;
+    --clr-btn-primary: #1c1c1c;
+    --clr-btn-text: #ffffff;
+}
+
+
+body{
+    font-family: 'Inter', 'Segoe UI', Roboto,Helvetica,Arial, sans-serif;
+    background-color: #e9e9e9;
+    color: var(--clr-text-primary);
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Contêiner principal (o cartão branco) */
+.form-container {
+    background-color: var(--clr-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    width: 100%;
+    max-width: 900px;
+}
+
+/* --- 2. LAYOUT RESPONSIVO (GRID) --- */
+
+.form-layout {
+    display: grid;
+    /* Por padrão, em telas menores, será uma única coluna */
+    grid-template-columns: 1fr;
+    gap: 40px;
+}
+
+/* Layout de duas colunas para telas maiores */
+@media (min-width: 768px) {
+    .form-layout {
+        grid-template-columns: 2fr 1fr; /* 2/3 para formulário, 1/3 para aside */
+    }
+}
+
+/* --- 3. ESTILOS DO FORMULÁRIO (COLUNA 1) --- */
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Espaço entre grupos de campos */
+}
+
+/* Estilo para inputs (Full Name, Email, Password) */
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--clr-border);
+    border-radius: 6px;
+    font-size: 16px;
+    transition: all 0.2s ease-in-out; /* Transição para foco */
+    box-sizing: border-box; /* Garante que padding não aumente a largura total */
+}
+
+/* Estilo de Rótulo */
+label {
+    font-size: 14px;
+    font-weight: 600;
+    display: block; /* Para garantir que o input fique abaixo */
+    margin-bottom: 5px;
+}
+
+/* * Efeito HOVER e FOCUS (muito importante para acessibilidade!) 
+ * O efeito FOCUS deve ser o mais visível e claro.
+ */
+input:focus {
+    border-color: var(--clr-progress-done); /* Borda escura no foco */
+    box-shadow: 0 0 0 1px var(--clr-progress-done);
+}
+
+
+/* 1. Oculta o div pai do password-group e usa um novo container */
+.field-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px; /* Espaço entre label e o input/ícone */
+}
+
+/* 2. Aplica Flexbox para input e botão no mesmo nível */
+.input-with-icon {
+    display: flex;
+    align-items: center; /* Centraliza o input e o botão verticalmente */
+    border: 1px solid var(--clr-border); /* Move a borda para o contêiner */
+    border-radius: 6px;
+    padding-right: 10px; /* Padding à direita para o botão não colar na borda */
+    transition: all 0.2s ease-in-out; 
+}
+
+/* 3. Ajusta o input (Remove a borda, usa 100% da largura restante) */
+.input-with-icon input {
+    flex-grow: 1; /* Permite que o input preencha o espaço */
+    border: none; /* Remove a borda do input, agora está no pai */
+    padding: 12px 15px;
+    /* Remove a transição de foco/hover do input, agora será aplicada no pai (.input-with-icon) */
+}
+
+/* 4. Estiliza o botão dentro do novo contêiner */
+.input-with-icon button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px;
+    color: var(--clr-border);
+    /* Remove o posicionamento absoluto */
+    position: static;
+}
+
+/* Aplica o FOCO/HOVER ao contêiner pai para afetar toda a linha */
+.input-with-icon:focus {
+    border-color: var(--clr-progress-done);
+    box-shadow: 0 0 0 1px var(--clr-progress-done);
+}
+
+/* Remova ou ajuste o CSS anterior para o .password-group e o botão de toggle antigo. */
+
+/* Estilo do Botão Principal */
+button[type="submit"] {
+    background-color: var(--clr-btn-primary);
+    color: var(--clr-btn-text);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s;
+}
+
+button[type="submit"]:hover, 
+button[type="submit"]:focus {
+    background-color: #333;
+    outline: 2px solid var(--clr-progress-done);
+    outline-offset: 2px;
+}
+
+/* --- 4. ESTILOS DE ERRO E ACESSIBILIDADE --- */
+
+/* Estilo de erro (conforme o mockup, borda vermelha) */
+input.error,
+input[aria-invalid="true"] {
+    border-color: var(--clr-error) !important;
+    outline-color: var(--clr-error) !important;
+}
+
+/* Mensagem de erro */
+.error-message {
+    color: var(--clr-error);
+    font-size: 13px;
+    margin-top: 5px;
+    margin-bottom: 0;
+}
+
+/* --- 5. ESTILOS DA BARRA LATERAL (COLUNA 2 - ASIDE) --- */
+
+.completeness-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centraliza o conteúdo horizontalmente */
+    text-align: center;
+    
+}
+
+/* Barra de Progresso Circular (simulada) e Percentual */
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    /* Isso seria feito com SVG ou CSS Conic Gradient para ser perfeito, 
+       mas vamos simplificar o visual */
+    border: 8px solid var(--clr-progress-pending);
+    border-top-color: var(--clr-progress-done); /* Simula o progresso */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.progress-circle p {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.completeness-sidebar h1 {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+/* Checklist de Requisitos */
+.checklist-container {
+    background-color: var(--clr-background-aside);
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: left; /* Alinha o texto da lista à esquerda */
+}
+
+.checklist-container ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.checklist-container li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: var(--clr-text-primary);
+    /* Simulação visual do item concluído */
+}
+
+/* Estilo para itens concluídos (simulação do cinza claro com tachado) */
+.checklist-container li[aria-checked="true"] {
+    color: var(--clr-text-secondary); /* Cor mais clara */
+    text-decoration: line-through; /* Linha de exclusão */
+}

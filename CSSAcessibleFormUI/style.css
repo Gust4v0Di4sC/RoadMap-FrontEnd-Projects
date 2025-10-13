@@ -189,6 +189,7 @@ input[aria-invalid="true"] {
        mas vamos simplificar o visual */
     border: 8px solid var(--clr-progress-pending);
     border-top-color: var(--clr-progress-done); /* Simula o progresso */
+    border-left-color: var(--clr-progress-done); /* Simula o progresso */
     display: flex;
     justify-content: center;
     align-items: center;

@@ -1,0 +1,149 @@
+/* Estilos globais e reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+/* O Grid Container principal */
+.gallery-container {
+    display: grid;
+    /* 1. Definindo o Grid Structure (Desktop) */
+    /* 3 colunas de largura igual */
+    grid-template-columns: repeat(3, 1fr); 
+    /* 3 linhas. Usamos 'auto' para que as linhas se ajustem ao conteúdo */
+    grid-template-rows: repeat(3, auto); 
+    
+    /* Spacing (Gap) */
+    gap: 15px; 
+    
+    max-width: 1200px;
+    width: 90%;
+}
+
+
+
+/* 2. Definindo a posição e o span de cada item */
+
+/* Item 1 (Rock): C1, abrange L1 e L2 (grid-row: span 2) */
+.gallery-image:nth-child(1) {
+    grid-row: 1 / span 2; 
+    grid-column: 1 / 2;
+}
+
+/* Item 2 (Soup): L1, abrange C2 e C3 (grid-column: span 2) */
+.gallery-image:nth-child(2) {
+    grid-row: 1 / 2;
+    grid-column: 2 / span 2;
+}
+
+/* Item 3 (Houses): L2, C3 (slot livre) */
+.gallery-image:nth-child(3) {
+    grid-row: 2 / 3;
+    grid-column: 3 / 4;
+}
+
+/* Item 4 (Door): L2, C2 (slot livre) */
+.gallery-image:nth-child(4) {
+    grid-row: 2 / 3;
+    grid-column: 2 / 3;
+}
+
+/* Item 5 (Interior): L3, abrange C1 e C2 (grid-column: span 2) */
+.gallery-image:nth-child(5) {
+    grid-row: 3 / 4;
+    grid-column: 1 / span 2;
+}
+
+/* Item 6 (Beach): L3, C3 (slot livre) */
+.gallery-image:nth-child(6) {
+    grid-row: 3 / 4;
+    grid-column: 3 / 4;
+}
+
+
+/* Estilos para o conteúdo (Imagens) */
+
+.gallery-image {
+    width: 100%;
+    /* Altura mínima para os itens simples terem um tamanho base, antes do 'span' */
+    min-height: 250px; 
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    /* Alinhamento: Os itens da grid são naturalmente preenchidos, mas a imagem precisa preencher o <figure> */
+}
+
+.gallery-image figure {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+}
+
+.gallery-image figure img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: cover é crucial para garantir que a imagem cubra a área total do grid item sem distorcer,
+       mantendo a proporção. */
+    object-fit: cover; 
+    display: block; 
+}
+
+@media (max-width: 768px) {
+    .gallery-container {
+        /* Muda para 2 colunas */
+        grid-template-columns: repeat(2, 1fr);
+        /* 5 linhas, já que os itens altos (1, 4) ainda precisam de 2 linhas e o total é 6 */
+        grid-template-rows: repeat(5, auto); 
+    }
+
+    /* Redefinindo as posições para o layout de 2 colunas:
+       [1 (span 2r)] [2 (span 2c)]
+       [4 (span 2r)] [3]
+       [4 (span 2r)] [5]
+       [1 (span 2r)] [6]
+       Isso é muito confuso. A melhor prática é simplesmente **remover os spans**.
+    */
+
+    /* Removendo os Spans para um fluxo mais simples de 2 colunas */
+    .gallery-image:nth-child(n) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+    
+    /* Layout mais limpo de 2 colunas:
+       L1: [1] [2]
+       L2: [3] [4]
+       L3: [5] [6]
+       O navegador organiza automaticamente em 2 colunas (2 slots por linha).
+    */
+
+    .gallery-image:nth-child(odd) {
+        grid-column: 1 / 2;
+    }
+    .gallery-image:nth-child(even) {
+        grid-column: 2 / 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        /* Muda para 1 única coluna */
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+
+    /* Redefine as posições para o fluxo normal de coluna única */
+    .gallery-image:nth-child(n) {
+        grid-row: auto;
+        grid-column: auto;
+    }
+}

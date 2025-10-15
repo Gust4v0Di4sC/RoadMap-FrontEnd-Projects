@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tabs</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<main class="tab-container">
+    <h1>Navegação por Abas</h1>
+
+    <div class="tabs" role="tablist">
+        <button 
+            class="tab-button active" 
+            role="tab" 
+            id="tab-btn-1" 
+            aria-selected="true" 
+            aria-controls="panel-1" 
+            tabindex="0" 
+            data-tab="panel-1"
+        >
+            First Tab
+        </button>
+        
+        <button 
+            class="tab-button" 
+            role="tab" 
+            id="tab-btn-2" 
+            aria-selected="false" 
+            aria-controls="panel-2" 
+            tabindex="-1" 
+            data-tab="panel-2"
+        >
+            Second Tab
+        </button>
+
+        <button 
+            class="tab-button" 
+            role="tab" 
+            id="tab-btn-3" 
+            aria-selected="false" 
+            aria-controls="panel-3" 
+            tabindex="-1" 
+            data-tab="panel-3"
+        >
+            Third Tab
+        </button>
+
+        <button 
+            class="tab-button" 
+            role="tab" 
+            id="tab-btn-4" 
+            aria-selected="false" 
+            aria-controls="panel-4" 
+            tabindex="-1" 
+            data-tab="panel-4"
+        >
+            Fourth Tab
+        </button>
+    </div>
+
+    <p>Clicking each tab should hide the content of the other tab and show the content of clicked tab. By default, enable the first tab.</p>
+
+
+    <section 
+        id="panel-1" 
+        class="tab-content active" 
+        role="tabpanel" 
+        aria-labelledby="tab-btn-1" 
+        tabindex="0"
+    >
+        <div class="content-box">
+            First Tab content to be displayed here.
+        </div>
+        <p>Add some dummy content or just add a simple text showing the tab: Conteúdo da Primeira Aba.</p>
+    </section>
+
+    <section 
+        id="panel-2" 
+        class="tab-content" 
+        role="tabpanel" 
+        aria-labelledby="tab-btn-2" 
+        hidden
+        tabindex="0"
+    >
+        <div class="content-box-alt">
+            Second Tab content here.
+        </div>
+        <p>Add some dummy content or just add a simple text showing the tab: Conteúdo da Segunda Aba.</p>
+    </section>
+
+    <section 
+        id="panel-3" 
+        class="tab-content" 
+        role="tabpanel" 
+        aria-labelledby="tab-btn-3" 
+        hidden
+        tabindex="0"
+    >
+        <div class="content-box-alt">
+            Third Tab content here.
+        </div>
+        <p>Add some dummy content or just add a simple text showing the tab: Conteúdo da Terceira Aba.</p>
+    </section>
+
+    <section 
+        id="panel-4" 
+        class="tab-content" 
+        role="tabpanel" 
+        aria-labelledby="tab-btn-4" 
+        hidden
+        tabindex="0"
+    >
+        <div class="content-box-alt">
+            Fourth Tab content here.
+        </div>
+        <p>Add some dummy content or just add a simple text showing the tab: Conteúdo da Quarta Aba.</p>
+    </section>
+
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

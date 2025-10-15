@@ -1,0 +1,104 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.tab-container {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Estilo para a linha de abas */
+.tabs {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 20px;
+}
+
+/* Estilo para cada botão de aba */
+.tab-button {
+    background: none;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    color: #888; /* Cor cinza para abas inativas */
+    transition: color 0.3s, border-bottom 0.3s;
+    margin-right: 5px;
+}
+
+/* Estilo para a aba ativa */
+.tab-button.active {
+    color: #333; /* Cor mais escura para a aba ativa */
+    border-bottom: 2px solid #000; /* Linha preta embaixo da aba ativa */
+    font-weight: bold;
+}
+
+/* Conteúdo introdutório (instrução) */
+.tab-container > p {
+    margin-top: 0;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+/* Estilo para a caixa preta do conteúdo principal */
+.content-box {
+    background-color: #000;
+    color: #fff;
+    padding: 50px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.content-box-alt {
+    /* Estilo similar, mas talvez sem o padding excessivo se for um conteúdo secundário */
+    background-color: #222;
+    color: #ccc;
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* ... (Mantenha todo o CSS anterior) ... */
+
+/* Esconder todos os conteúdos de aba por padrão */
+.tab-content {
+    /* Usamos 'display: none;' para a troca visual, mas o atributo 'hidden' no HTML
+       já ajuda a esconder o conteúdo dos leitores de tela. */
+    display: none; 
+    padding-top: 5px;
+}
+
+/* Mostrar apenas o conteúdo da aba ativa */
+.tab-content.active {
+    display: block;
+}
+
+/* Esconda o <h1> se ele for apenas para acessibilidade/estrutura e não para o design */
+main > h1 {
+    /* Exemplo para esconder visualmente, mas manter para leitores de tela */
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}

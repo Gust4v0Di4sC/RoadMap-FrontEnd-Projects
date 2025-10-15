@@ -1,0 +1,103 @@
+/* 1. Estilos Básicos e da Navbar */
+body {
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 10vh;
+    margin: 0;
+    background-color: #f0f0f0;
+}
+
+nav{
+    margin-top: 32px;
+}
+
+.navbar ul {
+    list-style: none; 
+    padding: 0;
+    margin: 0;
+    display: flex; 
+    align-items: center;
+}
+
+.navbar li:not(:last-child) {
+    margin-right: 15px; 
+    position: relative; 
+}
+
+/* Cria os pontos divisores */
+.navbar li:not(:last-child)::after {
+    content: '•'; /* Ponto */
+    position: absolute;
+    right: -10px; /* Ajusta a posição do ponto */
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+    font-size: 14px;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 5px 0;
+    display: block;
+}
+
+/* 2. Configuração do Tooltip Container */
+.tooltip-container {
+    position: relative; /*  Define o contexto de posicionamento para o tooltip */
+}
+
+/* 3. Estilo e Ocultação Padrão do Tooltip */
+.tooltip {
+    /* Estilo visual */
+    background-color: black;
+    color: white;
+    padding: 8px 15px;
+    border-radius: 8px; /* Cantos arredondados */
+    white-space: nowrap; /* Impede quebra de linha */
+    text-align: center;
+    font-size: 14px;
+
+   
+    position: absolute;
+    bottom: calc(100% + 10px); /* Posiciona acima (100% da altura + 10px de espaço) */
+    left: 50%;
+    transform: translateX(-50%) scale(0.8); /* Centraliza horizontalmente e reduz para o efeito scale-in */
+    
+    /* Ocultar por padrão e configurar para o fade/slide */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Impede que o tooltip interfira na interação */
+
+    /* 6. Transição (Efeitos) */
+    /* Adiciona transição suave para as propriedades que serão alteradas no hover */
+    transition: opacity 0.3s ease-out, transform 0.3s ease-out, visibility 0.3s; 
+}
+
+/* 4. Criando a Seta do Tooltip (Triângulo) */
+.tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -9px; /* Coloca a seta para fora da parte inferior do tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    
+    /* Cria o triângulo usando bordas transparentes e uma borda colorida */
+    border-width: 10px 10px 0; /* Largura da base, altura do triângulo */
+    border-style: solid;
+    border-color: black transparent transparent transparent; /* A cor superior (black) será a seta */
+}
+
+/* 5. Mostrar o Tooltip no Hover (Efeito de Fade-in, Slide-in e Scale-in) */
+.tooltip-container:hover .tooltip {
+    opacity: 1; /* Fade-in */
+    visibility: visible;
+    
+    /* Efeito de Slide-in e Scale-in: 
+       A transição no 'bottom' é o slide-in (se alterássemos o bottom), 
+       mas neste caso, vamos usar o 'transform' para um efeito mais complexo (scale-in e pequeno slide) */
+    transform: translateX(-50%) scale(1); /* Traz de volta ao tamanho normal (Scale-in) */
+}

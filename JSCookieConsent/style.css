@@ -1,0 +1,119 @@
+/* Estilos básicos para o corpo da página */
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* -------------------------------------- */
+/* Estilos do Pop-up de Cookies */
+/* -------------------------------------- */
+
+.cookie-popup {
+    /* Posição fixa no canto inferior direito */
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    
+    /* Z-index alto para garantir que fique por cima de outros elementos */
+    z-index: 1000;
+    
+    /* Configuração inicial para ocultar */
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s, visibility 0.3s;
+}
+
+.cookie-popup.hidden {
+    /* Oculta o pop-up */
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none; /* Garante que não interfira com cliques */
+}
+
+.cookie-content {
+    background-color: #1a1a1a; /* Fundo preto/escuro como na imagem */
+    color: white;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    max-width: 300px;
+    text-align: center;
+    position: relative;
+}
+
+.cookie-icon {
+    font-size: 48px; /* Tamanho do ícone */
+    display: block;
+    margin-bottom: 15px;
+    color: white;
+}
+
+/* Estilo para simular o ícone da imagem se você não quiser usar o emoji */
+/*
+.cookie-icon-mock {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background-color: #333;
+    border: 3px solid white;
+    margin: 0 auto 15px;
+    position: relative;
+    overflow: hidden;
+}
+.cookie-icon-mock::before {
+    content: '';
+    position: absolute;
+    width: 15px;
+    height: 15px;
+    background-color: white;
+    border-radius: 50%;
+    top: 5px;
+    left: 5px;
+}
+*/
+
+.cookie-content p {
+    margin-top: 0;
+    margin-bottom: 20px;
+    line-height: 1.5;
+    font-size: 16px;
+    text-align: left; /* Alinhamento do texto para a esquerda, como na imagem */
+}
+
+/* Botão de Aceitar Cookies */
+#accept-cookies-btn {
+    background-color: white;
+    color: black;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    width: 100%;
+    font-size: 14px;
+    transition: background-color 0.2s;
+}
+
+#accept-cookies-btn:hover {
+    background-color: #f0f0f0;
+}
+
+/* Botão de Fechar (o 'X' no canto superior direito) */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 5px;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    opacity: 0.8;
+}

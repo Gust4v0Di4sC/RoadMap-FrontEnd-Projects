@@ -13,13 +13,11 @@ body {
 .cookie-popup {
     /* Posição fixa no canto inferior direito */
     position: fixed;
-    bottom: 20px;
-    right: 20px;
+    top: 20px;
+    left: 20px;
     
     /* Z-index alto para garantir que fique por cima de outros elementos */
     z-index: 1000;
-    
-    /* Configuração inicial para ocultar */
     opacity: 1;
     visibility: visible;
     transition: opacity 0.3s, visibility 0.3s;
@@ -43,6 +41,7 @@ body {
     position: relative;
 }
 
+
 .cookie-icon {
     font-size: 48px; /* Tamanho do ícone */
     display: block;
@@ -50,29 +49,14 @@ body {
     color: white;
 }
 
-/* Estilo para simular o ícone da imagem se você não quiser usar o emoji */
-/*
-.cookie-icon-mock {
-    width: 48px;
-    height: 48px;
-    border-radius: 50%;
-    background-color: #333;
-    border: 3px solid white;
-    margin: 0 auto 15px;
-    position: relative;
-    overflow: hidden;
+.material-icons.cookie-icon {
+    font-size: 48px; /* Tamanho do ícone */
+    display: block;
+    margin-bottom: 15px;
+    color: white;
 }
-.cookie-icon-mock::before {
-    content: '';
-    position: absolute;
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    border-radius: 50%;
-    top: 5px;
-    left: 5px;
-}
-*/
+
+
 
 .cookie-content p {
     margin-top: 0;

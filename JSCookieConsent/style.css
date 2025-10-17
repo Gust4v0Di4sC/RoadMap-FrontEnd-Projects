@@ -101,3 +101,164 @@ body {
 .close-btn:hover {
     opacity: 0.8;
 }
+
+/* -------------------------------------- */
+/* Estilos do Skeleton Loading (Tela de Carregamento) */
+/* -------------------------------------- */
+
+.page-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Base dos elementos de carregamento */
+.skeleton-block, 
+.skeleton-text {
+    background-color: #e0e0e0; /* Cinza claro */
+    border-radius: 4px;
+    margin-bottom: 15px; /* Espaçamento entre os blocos */
+    /* Adiciona a animação de brilho */
+    animation: pulse 1.5s infinite ease-in-out;
+}
+
+/* Animação de brilho (opcional, mas recomendado) */
+@keyframes pulse {
+    0% {
+        background-color: #e0e0e0;
+    }
+    50% {
+        background-color: #f5f5f5; /* Cinza mais claro no meio do ciclo */
+    }
+    100% {
+        background-color: #e0e0e0;
+    }
+}
+
+/* -------------------------------------- */
+/* Estilos de Estrutura (Dimensions) */
+/* -------------------------------------- */
+
+/* 1. Header */
+.skeleton-header {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-bottom: 20px;
+}
+
+.header-links {
+    margin-left: 20px;
+}
+
+.header-text {
+    width: 100px;
+    height: 15px;
+    margin-left: 10px;
+}
+
+/* 2. Bloco Principal Grande */
+.large-rectangle {
+    width: 100%;
+    height: 250px;
+}
+
+/* 3. Bloco de Título de Seção */
+.skeleton-section-title {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.section-title-left {
+    width: 30%;
+    height: 25px;
+}
+
+.section-title-right {
+    width: 10%;
+    height: 25px;
+}
+
+/* 4. Colunas de Texto */
+.skeleton-two-columns {
+    display: flex;
+    gap: 50px; /* Espaço entre as colunas */
+    padding: 20px 0;
+}
+
+.skeleton-two-columns .column {
+    flex: 1;
+}
+
+/* 5. Blocos de Cards Inferiores */
+.skeleton-footer-cards {
+    display: flex;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+/* -------------------------------------- */
+/* Estilos de Tamanhos Específicos */
+/* -------------------------------------- */
+
+/* Blocos Quadrados */
+.small-square {
+    width: 35px;
+    height: 35px;
+}
+
+.medium-square {
+    width: 100%; /* Ocupa a largura do seu container flex */
+    height: 150px;
+}
+
+/* Linhas de Texto */
+.skeleton-text {
+    height: 12px;
+}
+
+.short-line {
+    width: 40%;
+}
+
+.medium-line {
+    width: 65%;
+}
+
+.long-line {
+    width: 95%;
+}
+
+.hidden {
+    display: none !important; /* Força a ocultação total */
+}
+
+
+/* Real Content */
+
+#real-content header{
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding-bottom: 20px; 
+    border-bottom: 1px solid #ccc;
+}
+
+#real-content h1{
+    color: #333;
+}
+
+#real-content nav{
+    margin-left: 15px; 
+    text-decoration: none; 
+    color: #007bff;
+}
+
+#real-content section{
+    padding: 40px 0;
+}
+
+#real-content p {
+    line-height: 1.6; color: #555;
+}

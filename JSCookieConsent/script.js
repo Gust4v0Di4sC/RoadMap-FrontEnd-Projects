@@ -1,52 +1,56 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Selecionar os elementos do DOM
+    // === Lógica de Consentimento de Cookies ===
     const popup = document.getElementById('cookie-consent-popup');
     const acceptBtn = document.getElementById('accept-cookies-btn');
     const closeBtn = document.getElementById('close-popup-btn');
-
-    // Chave que usaremos no localStorage
     const STORAGE_KEY = 'cookies_accepted';
 
-    // 2. Função para verificar o status do consentimento
-    function checkConsent() {
-        // Se a chave existir e o valor for 'true', o usuário já aceitou
-        const consent = localStorage.getItem(STORAGE_KEY);
-        
-        if (consent === 'true') {
-            // Se já aceitou, oculta o pop-up
-            hidePopup();
-        } else {
-            // Caso contrário, mostra o pop-up
-            showPopup();
-        }
-    }
+    function showPopup() { popup.classList.remove('hidden'); }
+    function hidePopup() { popup.classList.add('hidden'); }
 
-    // 3. Funções de visualização
-    function showPopup() {
-        popup.classList.remove('hidden');
-    }
-
-    function hidePopup() {
-        popup.classList.add('hidden');
-    }
-
-    // 4. Função para registrar o consentimento
     function acceptCookies() {
-        // Grava o consentimento no localStorage
         localStorage.setItem(STORAGE_KEY, 'true');
-        // Oculta o pop-up
         hidePopup();
-        // Opcional: Você pode carregar scripts ou fazer outras ações aqui
         console.log('Cookies aceitos e consentimento salvo!');
     }
 
-    // 5. Adicionar ouvintes de evento
     acceptBtn.addEventListener('click', acceptCookies);
-    // Adicione a mesma lógica ao botão de fechar, se ele também deve persistir a escolha
     closeBtn.addEventListener('click', acceptCookies);
-    // Nota: Em um site real, o botão 'X' pode simplesmente fechar **temporariamente**
-    // Se o 'X' deve fechar e **não** gravar o consentimento, use apenas `hidePopup` no click dele.
+    
+    // Inicia a verificação do cookie
+    const consent = localStorage.getItem(STORAGE_KEY);
+    if (consent !== 'true') {
+        showPopup();
+    }
+    
+    // === NOVO: Lógica do Skeleton Loading e Conteúdo Real ===
+    
+    const skeletonContainer = document.getElementById('skeleton-container');
+    const realContent = document.getElementById('real-content'); // Seleciona o novo conteúdo
+    
+    // Simula o tempo de carregamento da página (ex: 3 segundos)
+    const loadingTime = 3000; 
 
-    // 6. Iniciar a verificação ao carregar a página
-    checkConsent();
+    // Oculta o conteúdo real (apenas para garantir se o CSS falhar)
+    if (realContent) {
+        realContent.classList.add('hidden');
+    }
+
+    setTimeout(() => {
+        // 1. Esconde o Skeleton Screen
+        if (skeletonContainer) {
+            // Usamos 'hidden' que usa display: none !important
+            skeletonContainer.classList.add('hidden');
+        }
+
+        // 2. Mostra o Conteúdo Real
+        if (realContent) {
+            // Remove a classe 'hidden' para exibi-lo
+            realContent.classList.remove('hidden'); 
+        }
+
+        console.log('Conteúdo real carregado. Skeleton hidden.');
+        
+    }, loadingTime);
+    
 });

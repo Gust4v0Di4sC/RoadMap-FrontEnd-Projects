@@ -1,0 +1,76 @@
+/* * Estilos CSS Refatorado */
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #f4f4f9;
+}
+
+.container {
+    width: 100%;
+    max-width: 500px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.textarea-wrapper {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+#input-textarea {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 2px solid transparent;
+    border-radius: 10px; /* Cantos arredondados */
+    font-size: 16px;
+    resize: vertical;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+/* 1. Estilo Padrão no Focus */
+#input-textarea:focus {
+    outline: none;
+    border: 2px solid #000000; 
+}
+
+/* 2. Estilos para o estado de erro (excesso de caracteres) */
+/* Esta classe terá uma especificidade maior que o :focus simples */
+.error-border {
+    border-color: #dc3545; /* Borda vermelha */
+    
+}
+
+#input-textarea.error-border {
+    color: #dc3545; /* Cor do texto digitado (foreground) */
+}
+
+/* 3. Garante que o estado de erro prevaleça no focus */
+/* A combinação de classes/pseudo-classes é mais específica */
+#input-textarea.error-border:focus {
+    border-color: #dc3545; /* Mantém a cor vermelha */
+}
+
+/* Estilos para o contador de caracteres */
+.char-counter {
+    position: absolute;
+    bottom: 5px;
+    right: 15px;
+    font-size: 14px;
+    color: #6c757d;
+    background-color: #fff;
+    padding: 0 5px;
+    border-radius: 4px;
+    user-select: none;
+}
+
+.error-text {
+    color: #dc3545; /* Texto/Contador vermelho */
+}

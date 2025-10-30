@@ -1,0 +1,15 @@
+
+.container-questions{
+    margin:  0 auto;
+    border: 2px solid black;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.question{
+    padding: 16px;
+    background-color: #000000;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    color: white;
+}

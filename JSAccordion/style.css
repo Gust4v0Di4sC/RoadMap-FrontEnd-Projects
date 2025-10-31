@@ -1,15 +1,50 @@
 
+
+
 .container-questions{
-    margin:  0 auto;
     border: 2px solid black;
     border-radius: 16px;
-    padding: 16px;
+    padding: 18px;
+    width: 800px;
+    margin: 0 auto;
+}
+
+
+.title-questions{
+    text-align: left;
+    margin-bottom: 32px;
 }
 
 .question{
-    padding: 16px;
+    padding: 8px;
     background-color: #000000;
     border-radius: 8px;
     margin-bottom: 16px;
     color: white;
+}
+
+.list-questions .question dt button {
+    display: flex;
+    align-items: center; 
+    justify-content: space-between; 
+    width: 100%; 
+    padding: 15px 20px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    text-align: left; 
+    cursor: pointer;
+    font-size: 16px; 
+}
+
+.list-questions .question dt button::after {
+    content: 'v'; 
+    flex-shrink: 0; 
+    margin-left: 10px; 
+    font-size: 16px; 
+    transition: transform 0.3s; 
+}
+
+.list-questions .question.open dt button::after {
+    transform: rotate(180deg);
 }

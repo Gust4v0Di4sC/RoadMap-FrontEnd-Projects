@@ -4,7 +4,8 @@ let answerText = document.getElementById('answer');
 
 
 function handleClick(){
-   answerText.innerHTML = "teste";
+   answerText.innerHTML = `<div class="answer"> testetteste</div>`;
+   answerText.classList.toggle('hidden');
 }
 
-buttonQuestion.addEventListener(onclick,handleClick)
+buttonQuestion.addEventListener('click', handleClick);

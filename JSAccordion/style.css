@@ -1,5 +1,9 @@
- /* CSS INLINE PARA ESTILIZAÇÃO (MANTENDO O DESIGN FIEL) */
+/* CSS INLINE PARA ESTILIZAÇÃO (MANTENDO O DESIGN FIEL) */
         @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        dd{
+            margin: 0px;
+        }
         
         body {
             font-family: 'Roboto', sans-serif;
@@ -17,6 +21,7 @@
             background-color: #ffffff;
             padding: 30px;
             border: 1px solid #ccc;
+            border-radius: 16px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
         }
 
@@ -39,7 +44,7 @@
             list-style: none; /* Remove marcadores padrão da DL */
         }
         
-        /* Estrutura do Item */
+        /* Estrutura do Item (Usando div como wrapper) */
         .accordion-item {
             margin-bottom: 10px;
         }
@@ -60,6 +65,7 @@
             align-items: center;
             transition: background-color 0.3s;
             outline: none;
+            border-radius: 8px;
         }
 
         .accordion-header:hover {
@@ -80,9 +86,18 @@
             transition: max-height 0.3s ease-in-out;
             max-height: 0;
             padding: 0; 
-            border: 1px solid #000000; 
-            border-top: none; 
+            border-radius: 8px;
+            margin-top: 16px;
+            margin-bottom: 8px;
         }
+
+        /* ADICIONADO: Aplica a borda apenas ao conteúdo visível
+           (item.open) para criar a moldura do design. */
+        .accordion-item.open .accordion-content {
+            border: 1px solid #000000;
+            max-height: 500px; /* Mantém o valor para acomodar a resposta */
+        }
+
 
         /* Container interno para aplicar o padding real ao texto */
         .accordion-content-inner {
@@ -100,4 +115,8 @@
         .accordion-item.open .accordion-content {
             /* Valor grande o suficiente para acomodar a resposta */
             max-height: 500px; 
+        }
+
+        .hidden{
+            display: none;
         }

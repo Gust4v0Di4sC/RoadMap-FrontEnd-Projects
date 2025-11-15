@@ -1,24 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accordion </title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <article class="container-questions">
-        <div class="title-questions">
-           <h2>Frequently Asked Questions</h2>
-           <p>Here are some of the frequently asked questions</p> 
-        </div>
-        
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Accordion</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+     <div class="faq-container">
+        <h2 class="faq-heading">Frequently Asked Questions</h2>
+        <p class="faq-subtext">Here are some of the frequently asked questions</p>
 
+        <!-- ESTRUTURA ESTÁTICA SIMPLIFICADA -->
         <dl class="list-questions">
-            
+            <!-- Item 1 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">What is roadmap.sh? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
+            <!-- Item 2 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">What are the plans for roadmap.sh? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
+            <!-- Item 3 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">How is roadmap.sh built? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
+            <!-- Item 4 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">Can I use roadmap.sh in my team? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
+            <!-- Item 5 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">How can I create custom roadmaps? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
+            <!-- Item 6 -->
+            <div class="accordion-item">
+                <dt><button class="accordion-header">Is roadmap.sh really 7th most starred project on GitHub? <span class="accordion-icon">v</span></button></dt> 
+                <dd class="accordion-content"> 
+                   <div class="accordion-content-inner"><p></p></div>
+                </dd>   
+            </div>
         </dl>
-    </article>
-
+    </div>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

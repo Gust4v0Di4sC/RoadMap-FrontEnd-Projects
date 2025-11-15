@@ -1,9 +1,16 @@
 
+// let answerText = document.getElementById('answer');
 
 
-// 1. Defina o texto da resposta
-const answersQuestions = [
-     {
+// function handleClick(){
+   
+//    answerText.classList.toggle('hidden');
+//    answerText.classList.add('answer');
+// }
+
+ // 1. DATA ARRAY (Permanecerá no JS para facilitar a manutenção das respostas)
+        const faqData = [
+            {
                 question: "What is roadmap.sh?",
                 answer: "roadmap.sh is a community effort to create learning paths, guides, project ideas and other similar content to help developers grow in their careers."
             },
@@ -27,11 +34,18 @@ const answersQuestions = [
                 question: "Is roadmap.sh really 7th most starred project on GitHub?",
                 answer: "Yes, it has achieved a very high ranking among popular GitHub repositories, thanks to the immense support and contributions from the developer community."
             }
-];
+        ];
 
-
- // 2. LÓGICA DO ACORDEÃO (Abrir/Fechar)
-        function toggleAccordion(item, content) {
+        // 2. FUNÇÃO SIMPLES DE TOGGLE
+        function toggleAccordion(button) {
+            // O item pai que contém a pergunta e a resposta (div.accordion-item)
+            const item = button.closest('.accordion-item');
+            
+            
+            // A resposta é a DD, que é o segundo filho do item (após o DT)
+            // Usamos querySelector para encontrar a resposta dentro do item
+            const content = item.querySelector('.accordion-content');
+            
             item.classList.toggle('open');
             
             if (item.classList.contains('open')) {
@@ -43,53 +57,35 @@ const answersQuestions = [
             }
         }
 
-        // 3. RENDERIZAÇÃO E INSERÇÃO DE CONTEÚDO
+        // 3. INJEÇÃO DE DADOS E EVENT LISTENERS
         document.addEventListener('DOMContentLoaded', () => {
-            const container = document.querySelector('.list-questions'); // Onde inseriremos o DL
-            
-            answersQuestions.forEach((item, index) => {
-                // A. Cria o contêiner principal do item
-                const itemDiv = document.createElement('div');
-                itemDiv.classList.add('accordion-item');
+            const headers = document.querySelectorAll('.accordion-header');
+            const answerParagraphs = document.querySelectorAll('.accordion-content-inner p');
+           
 
-                // B. Cria a Pergunta (DT e BUTTON)
-                const dt = document.createElement('dt');
-                const button = document.createElement('button');
-                button.classList.add('accordion-header');
-                button.innerHTML = `${item.question} <span class="accordion-icon">v</span>`;
-                
-                dt.appendChild(button);
-                itemDiv.appendChild(dt);
+            // Itera sobre os dados e injeta as respostas nos parágrafos vazios
+            answerParagraphs.forEach((p, index) => {
+                if (faqData[index]) {
+                    p.textContent = faqData[index].answer;
+                }
+            });
 
-                // C. Cria a Resposta (DD e Content Container)
-                const dd = document.createElement('dd');
-                const contentDiv = document.createElement('div');
-                contentDiv.classList.add('accordion-content');
-                
-                // Content Inner para padding (mantendo o max-height no contentDiv)
-                const innerDiv = document.createElement('div');
-                innerDiv.classList.add('accordion-content-inner');
-                innerDiv.innerHTML = `<p>${item.answer}</p>`; // INSERÇÃO DA RESPOSTA AQUI!
-
-                contentDiv.appendChild(innerDiv);
-                dd.appendChild(contentDiv);
-                itemDiv.appendChild(dd);
-
-                // D. Insere o item completo no DL
-                container.appendChild(itemDiv);
-
-                // E. Anexa o Event Listener
+            // Itera sobre todos os botões e anexa a função de clique
+            headers.forEach((button, index) => {
+                // Adiciona o evento de clique
                 button.addEventListener('click', () => {
-                    // Passa o itemDiv (o pai) e o contentDiv (a resposta) para a função
-                    toggleAccordion(itemDiv, contentDiv);
+                    // Chama a função simples, passando o botão clicado
+                    toggleAccordion(button);
                 });
 
-                // F. Abre o primeiro item por padrão
+                // Abre o primeiro item por padrão
                 if (index === 0) {
-                    itemDiv.classList.add('open');
-                    // Usamos setTimeout para garantir que o elemento esteja no DOM antes de calcular a altura
+                    const item = button.closest('.accordion-item');
+                    const content = item.querySelector('.accordion-content');
+                    item.classList.add('open');
+                    // Garante que a altura seja calculada após o texto ter sido injetado
                     setTimeout(() => {
-                        contentDiv.style.maxHeight = contentDiv.scrollHeight + "px";
+                        content.style.maxHeight = content.scrollHeight + "px";
                     }, 0);
                 }
             });

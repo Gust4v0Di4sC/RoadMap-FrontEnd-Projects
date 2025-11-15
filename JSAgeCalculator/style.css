@@ -1,0 +1,77 @@
+body{
+    font-family: "Balsamiq Sans", sans-serif;
+}
+
+.container{
+    border: 2px solid black;
+    margin: 0 auto;
+    width: 500px;
+    text-align: center;
+    padding: 16px;
+    border-radius: 8px;
+}
+
+.container label{
+    font-size: 18px;
+    margin-bottom: 32px;
+}
+
+.container input{
+    padding: 8px 8px;
+    border-radius: 8px;
+    margin-bottom: 16px;
+    width: 200px;
+}
+
+.container button{
+    padding: 8px 8px;
+    width: 200px;
+    background-color: rgb(49, 49, 49);
+    color: white;
+    border-radius: 8px;
+    border: none;
+    transition: ease-in-out;
+}
+
+.container button:hover{
+    background-color: rgb(83, 83, 83);
+    
+}
+
+
+ /* 1. O Contêiner (Wrapper) */
+.icon-calendar {
+    position: relative; 
+    /* Garante que o contêiner apenas envolva o input e não ocupe a largura toda */
+    display: inline-block; 
+}
+
+/* 2. O Campo de Input */
+.icon-calendar input#birthdate {
+    /* É crucial usar o box-sizing: border-box para que o padding não quebre a largura */
+    box-sizing: border-box; 
+    /* Ajusta a largura para o tamanho que você deseja, ex: 100% ou um valor fixo */
+    width: 250px; 
+    height: 40px; /* Altura padrão para um bom visual */
+    
+    /* Adiciona preenchimento (padding) à direita para o ícone caber e não cobrir o texto */
+    padding-right: 35px; 
+    /* Aplique aqui todas as suas outras estilizações de input (bordas, cores, fontes, etc.) */
+}
+
+/* 3. O Ícone (calendário) */
+/* Miramos no <i> dentro do wrapper .icon-calendar */
+.icon-calendar i {
+    position: absolute; /* Posicionamento livre em relação ao .icon-calendar */
+    top: 40%; /* Centraliza verticalmente */
+    right: 10px; /* Distância da borda direita */
+    
+    /* Ajuste vertical fino e cor */
+    transform: translateY(-50%); 
+    color: #999; 
+    font-size: 1.2em;
+    
+    /* ESSENCIAL: Permite que o clique atravesse o ícone para o input */
+    pointer-events: none; 
+}
+

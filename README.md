@@ -16,4 +16,5 @@ Repositorio com todos os projetos feitos no site Roadmap.sh
     <li>https://roadmap.sh/projects/simple-tabs</li>
     <li>https://roadmap.sh/projects/cookie-consent</li>
     <li>https://roadmap.sh/projects/restricted-textarea</li>
+    <li>https://roadmap.sh/projects/accordion</li>
 </ul>

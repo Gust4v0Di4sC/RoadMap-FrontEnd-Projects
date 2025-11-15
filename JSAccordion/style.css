@@ -1,58 +1,103 @@
-.hidden{
-    display: none;
-}
+ /* CSS INLINE PARA ESTILIZAÇÃO (MANTENDO O DESIGN FIEL) */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
 
+        .faq-container {
+            width: 100%;
+            max-width: 700px;
+            background-color: #ffffff;
+            padding: 30px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
 
-.container-questions{
-    border: 2px solid black;
-    border-radius: 16px;
-    padding: 18px;
-    width: 800px;
-    margin: 0 auto;
-}
+        .faq-heading {
+            font-size: 28px;
+            font-weight: 700;
+            color: #000000;
+            margin-bottom: 5px;
+        }
 
-.answer{
-    margin-top: 16px;
-    border: 2px solid black;
-    border-radius: 8px;
-    background-color: transparent;
-}
+        .faq-subtext {
+            font-size: 16px;
+            color: #333333;
+            margin-bottom: 30px;
+        }
 
-.title-questions{
-    text-align: left;
-    margin-bottom: 32px;
-}
+        .list-questions {
+            margin: 0;
+            padding: 0;
+            list-style: none; /* Remove marcadores padrão da DL */
+        }
+        
+        /* Estrutura do Item */
+        .accordion-item {
+            margin-bottom: 10px;
+        }
 
-.question{
-    padding: 8px;
-    background-color: #000000;
-    border-radius: 8px;
-    margin-bottom: 16px;
-    color: white;
-}
+        /* Cabeçalho/Botão */
+        .accordion-header {
+            width: 100%;
+            padding: 15px 20px;
+            background-color: #000000;
+            color: #ffffff;
+            border: none;
+            text-align: left;
+            font-size: 16px;
+            font-weight: 400;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+            outline: none;
+        }
 
-.list-questions .question dt button {
-    display: flex;
-    align-items: center; 
-    justify-content: space-between; 
-    width: 100%; 
-    padding: 15px 20px;
-    background-color: #000;
-    color: #fff;
-    border: none;
-    text-align: left; 
-    cursor: pointer;
-    font-size: 16px; 
-}
+        .accordion-header:hover {
+            background-color: #1a1a1a;
+        }
 
-.list-questions .question dt button::after {
-    content: 'v'; 
-    flex-shrink: 0; 
-    margin-left: 10px; 
-    font-size: 16px; 
-    transition: transform 0.3s; 
-}
+        /* Ícone 'v' */
+        .accordion-icon {
+            font-size: 18px;
+            margin-left: 10px;
+            transition: transform 0.3s ease;
+        }
 
-.list-questions .question.open dt button::after {
-    transform: rotate(180deg);
-}
+        /* Conteúdo (DD) */
+        .accordion-content {
+            background-color: #ffffff;
+            overflow: hidden; 
+            transition: max-height 0.3s ease-in-out;
+            max-height: 0;
+            padding: 0; 
+            border: 1px solid #000000; 
+            border-top: none; 
+        }
+
+        /* Container interno para aplicar o padding real ao texto */
+        .accordion-content-inner {
+            padding: 20px;
+        }
+
+        .accordion-content-inner p {
+            margin: 0;
+            line-height: 1.5;
+            color: #000000;
+            font-size: 16px;
+        }
+
+        /* Estado Aberto */
+        .accordion-item.open .accordion-content {
+            /* Valor grande o suficiente para acomodar a resposta */
+            max-height: 500px; 
+        }

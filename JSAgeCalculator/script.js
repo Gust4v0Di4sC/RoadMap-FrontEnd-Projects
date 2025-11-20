@@ -1,31 +1,54 @@
-document.addEventListener('DOMContentLoaded', (event) => {
-        
-        // 2. Chama a função global 'datepicker()' e passa o ID do input como string.
-        const picker = datepicker('#birthdate', {
-            // Opções de configuração (Exemplos Comuns)
-            
-            // Define o formato da data que será exibido no input
-            // Veja: https://www.npmjs.com/package/date-fns
-            formatter: (input, date, instance) => {
-                const value = date.toLocaleDateString('pt-BR', {
-                    day: '2-digit',
-                    month: '2-digit',
-                    year: 'numeric'
-                })
-                input.value = value
-            },
-            
-            // Habilita as opções de navegação rápida
-            customDays: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
-            customMonths: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro'],
-            startDay: 0, // 0 para Domingo
-            
-            // Outras opções:
-            // position: 'bl', // Posição de exibição (Bottom-Left)
-            // minDate: new Date(2023, 0, 1) // Data mínima permitida
-        });
-        
-        // Você pode agora interagir com a instância do datepicker (a variável 'picker')
-         picker.setDate(new Date()); 
 
-    });
+const DateTime = luxon.DateTime;
+
+const dateInput = document.getElementById('birth-date');
+const submitButton = document.getElementById('btn-calc');
+const resultCalc = document.getElementById('result-calc');
+
+let datepickerInstance;
+
+const picker = datepickerInstance = datepicker(dateInput, {
+
+        dateSelected: null,
+        formatter: (input, date, instance) => {
+            input.value = date.toLocaleDateString('pt-BR');
+        },
+        maxDate: new Date(),
+        startDay: 0,
+        customDays: ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb'],
+        customMonths: ['Janeiro', 'Fevereiro', 'Março', 'Abril', 'Maio', 'Junho', 'Julho', 'Agosto', 'Setembro', 'Outubro', 'Novembro', 'Dezembro']
+});
+
+
+function calculateAge(e) {
+    e.preventDefault();
+    const dataSelecionada = picker.dateSelected;
+
+    if (!dataSelecionada) {
+        resultCalc.style.color = 'red';
+        resultCalc.innerText = 'Por favor, selecione uma data de nascimento.';
+        return;
+    }
+
+    const dateBirth = DateTime.fromJSDate(dataSelecionada);
+    const dataAtual = DateTime.now();
+
+
+
+    const diff = dataAtual.diff(dateBirth, ['years', 'months']).toObject();
+
+    const years = Math.floor(diff.years);
+    const months = Math.floor(diff.months);
+
+
+    resultCalc.style.color = 'black';
+
+    const textYears = years === 1 ? 'ano' : 'anos';
+    const textMonths = months === 1 ? 'mês' : 'meses';
+
+    resultCalc.innerHTML = `Você tem <span class="text-age">${years} ${textYears}</span> e <span class="text-age">${months} ${textMonths}</span>.`;
+}
+
+submitButton.addEventListener('click', calculateAge);
+
+

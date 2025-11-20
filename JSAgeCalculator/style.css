@@ -75,3 +75,7 @@ body{
     pointer-events: none; 
 }
 
+.text-age{
+    color: black;
+    font-weight: bold;
+}

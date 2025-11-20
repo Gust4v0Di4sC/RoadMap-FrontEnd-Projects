@@ -19,22 +19,25 @@
     <section class="container">
         <h1>Age Calculator</h1>
 
-        <form action="">
+        <form id="age-form" action="">
             <div>
                 <label  for="birthdate">Enter your birth date: </label>
                 <div class="icon-calendar">
-                    <input type="text" name="" id="birthdate" placeholder="Selecione a data"/>
+                    <input type="text" name="" id="birth-date" placeholder="Selecione a data"/>
 
                     <i class="fas fa-calendar-alt icon-calendar"></i>
                 </div>
             </div>
-            <button type="submit">Calculate</button>
+            <button type="submit" id="btn-calc">Calculate</button>
         </form>
 
-        <p><span></span></p>
+        <div>
+            <p id="result-calc"></p>   
+        </div>
     </section>
 
-    <script src="https://unpkg.com/js-datepicker/dist/datepicker.min.js"></script>
+ <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+    <script src="https://unpkg.com/js-datepicker"></script>
     <script src="script.js"></script>
 </body>
 

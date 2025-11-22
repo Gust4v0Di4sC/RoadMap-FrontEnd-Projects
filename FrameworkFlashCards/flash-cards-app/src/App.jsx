@@ -8,25 +8,6 @@ function App() {
   const [currentIndex,setCurrentIndex] = useState(0);
   const [isFlipped, setIsFlipped] = useState(false);
 
-  const totalCards = questionsData.length;
-  const currentCard = questionsData[currentIndex];
-
-  const handleNext = () => {
-    if (currentCard < totalCards - 1) {
-      setIsFlipped(false);
-      setTimeout(() => setCurrentIndex((prev) => prev + 1), 150);
-    }
-  }
-
-  const handlePrev = () => {
-    if (currentCard > 0) {
-      setIsFlipped(false);
-      setTimeout(() => setCurrentIndex((prev) => prev + 1), 150);
-    }
-  }
-
-  const handleFlip = () => setIsFlipped(!isFlipped);
-
   const questionsData = [
     {
       id: 1,
@@ -59,6 +40,27 @@ function App() {
         "Uma extensão de sintaxe para JavaScript que permite escrever HTML dentro do código JS. O React transforma JSX em chamadas de função JavaScript.",
     },
   ];
+
+  const totalCards = questionsData.length;
+  const currentCard = questionsData[currentIndex];
+
+  const handleNext = () => {
+    if (currentCard < totalCards - 1) {
+      setIsFlipped(false);
+      setTimeout(() => setCurrentIndex((prev) => prev + 1), 150);
+    }
+  }
+
+  const handlePrev = () => {
+    if (currentCard > 0) {
+      setIsFlipped(false);
+      setTimeout(() => setCurrentIndex((prev) => prev - 1), 150);
+    }
+  }
+
+  const handleFlip = () => setIsFlipped(!isFlipped);
+
+  
 
   return (
     <div>

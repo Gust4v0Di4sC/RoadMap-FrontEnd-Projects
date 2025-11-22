@@ -1,3 +1,5 @@
+import { ChevronLeft, ChevronRight } from "lucide-react";
+
 const Controls = ({ onNext, onPrev, onFlip, isFlipped, hasNext, hasPrev }) => {
   return (
     <div className="bg-white rounded-xl p-4 shadow-sm border border-gray-200 flex justify-between items-center">

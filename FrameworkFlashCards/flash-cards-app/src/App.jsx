@@ -61,25 +61,25 @@ function App() {
 
   return (
     <div>
-      <div className="container mx-auto">
-        <div className="text-center">
-          <h1>Flash Cards</h1>
-        </div>
-        <ProgressBar current={currentIndex + 1} total={totalCards} />
-        <FlashCard
-          data={currentCard}
-          isFlipped={isFlipped}
-          onFlip={handleFlip}
-        />
-        <Controls
-          onNext={handleNext}
-          onPrev={handlePrev}
-          onFlip={handleFlip}
-          isFlipped={isFlipped}
-          hasNext={currentIndex < totalCards - 1}
-          hasPrev={currentIndex > 0}
-        />
-      </div>
+        <Container>
+          <div className="text-center">
+            <h1>Flash Cards</h1>
+          </div>
+          <ProgressBar current={currentIndex + 1} total={totalCards} />
+          <FlashCard
+            data={currentCard}
+            isFlipped={isFlipped}
+            onFlip={handleFlip}
+          />
+          <Controls
+            onNext={handleNext}
+            onPrev={handlePrev}
+            onFlip={handleFlip}
+            isFlipped={isFlipped}
+            hasNext={currentIndex < totalCards - 1}
+            hasPrev={currentIndex > 0}
+          />
+        </Container>
     </div>
   );
 }

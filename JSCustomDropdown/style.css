@@ -1,0 +1,126 @@
+/* --- CSS --- */
+        :root {
+            --border-color: #000;
+            --bg-color: #fff;
+            --hover-color: #f0f0f0;
+            --radius: 12px;
+            --padding: 12px 16px;
+        }
+
+        body {
+            font-family: sans-serif;
+            display: flex;
+            justify-content: center;
+            padding-top: 50px;
+        }
+
+        /* Container Principal */
+        .dropdown-container {
+            position: relative;
+            width: 300px;
+            user-select: none; /* Evita seleção de texto ao clicar rápido */
+        }
+
+        /* O botão que mostra o item selecionado */
+        .dropdown-trigger {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--bg-color);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            padding: var(--padding);
+            cursor: pointer;
+            font-size: 16px;
+            transition: border-color 0.2s;
+        }
+
+        /* A Seta (Arrow) feita com CSS puro */
+        .arrow {
+            border: solid black;
+            border-width: 0 2px 2px 0;
+            display: inline-block;
+            padding: 4px;
+            transition: transform 0.3s ease;
+            transform: rotate(45deg); /* Seta para baixo */
+            margin-left: 10px;
+            margin-bottom: 4px;
+        }
+
+        /* Estado Aberto: Seta vira para cima */
+        .dropdown-container.open .arrow {
+            transform: rotate(-135deg);
+            margin-bottom: -4px;
+        }
+
+        /* A Lista de Opções */
+        .dropdown-menu {
+            position: absolute;
+            top: 100%; /* Fica logo abaixo do trigger */
+            left: 0;
+            right: 0;
+            background-color: var(--bg-color);
+            border: 2px solid var(--border-color);
+            border-radius: var(--radius);
+            margin-top: 8px; /* Pequeno espaço entre o botão e a lista */
+            list-style: none;
+            padding: 0;
+            display: none; /* Escondido por padrão */
+            z-index: 10;
+            overflow: hidden;
+        }
+
+        /* Mostrar menu quando container tem classe .open */
+        .dropdown-container.open .dropdown-menu {
+            display: block;
+        }
+
+        /* Itens da lista */
+        .dropdown-item {
+            padding: var(--padding);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between; /* Texto na esquerda, check na direita */
+            align-items: center;
+            border-bottom: 1px solid #eee;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--hover-color);
+        }
+
+        /* Ícone de Check (Bolinha preta com check branco) */
+        .check-icon {
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            border-radius: 50%;
+            position: relative;
+            display: none; /* Escondido se não estiver selecionado */
+        }
+
+        /* O "v" branco dentro da bolinha preta */
+        .check-icon::after {
+            content: '';
+            position: absolute;
+            left: 6px;
+            top: 3px;
+            width: 5px;
+            height: 10px;
+            border: solid white;
+            border-width: 0 2px 2px 0;
+            transform: rotate(45deg);
+        }
+
+        /* Estado Selecionado dentro da lista */
+        .dropdown-item.selected .check-icon {
+            display: block;
+        }
+        
+        .dropdown-item.selected {
+            font-weight: bold;
+        }

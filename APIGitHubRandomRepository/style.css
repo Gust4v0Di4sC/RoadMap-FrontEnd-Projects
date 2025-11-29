@@ -1,0 +1,169 @@
+/* Estilos globais e de layout */
+body {
+    font-family: "Balsamiq Sans", sans-serif;
+    background-color: #f0f2f5;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 50px;
+    margin: 0;
+}
+
+.container {
+    width: 400px;
+    background: #ffffff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.finder-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo-icon {
+    /* Exemplo simples: um quadrado preto para o ícone */
+    width: 20px;
+    height: 20px;
+    background-color: black;
+    border-radius: 4px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* Estilos para o Seletor de Linguagem */
+.language-selector-container {
+    margin-bottom: 20px;
+}
+
+#language-select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    font-size: 1em;
+}
+
+/* Estilos para a Área de Status/Repositório */
+.state-container {
+    padding: 15px;
+    border-radius: 4px;
+    margin-bottom: 20px;
+    text-align: center;
+    min-height: 100px; /* Garante que todos os estados tenham altura similar */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estado Vazio (Empty State) */
+.state-empty {
+    background-color: #f7f7f7;
+    border: 1px dashed #cccccc;
+    color: #666;
+    font-style: italic;
+}
+
+/* Estado de Carregamento (Loading State) */
+.state-loading {
+    background-color: #e9f5ff;
+    border: 1px solid #a8cfff;
+    color: #007bff;
+    /* Poderia adicionar uma animação de spinner aqui */
+}
+
+/* Estado de Erro (Error State) */
+.state-error {
+    background-color: #ffe8e8; /* Cor de fundo vermelha clara */
+    border: 1px solid #ff9999;
+    color: #cc0000;
+    margin-bottom: 10px; /* Espaço entre a mensagem de erro e o botão de Retry */
+}
+
+.retry-button {
+    background-color: #d93025;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+
+/* ESTADO DE SUCESSO - Repositório Encontrado */
+.repository-card {
+    border: 1px solid #000000;
+    padding: 15px ;
+    text-align: left;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    box-sizing: border-box;
+    border-radius: 16px;
+
+}
+
+.repository-card h2 {
+    font-size: 1.1em;
+    margin: 0 0 5px 0;
+    color: #0366d6; /* Cor de link do GitHub */
+    
+    word-break: break-all;
+}
+
+.repository-card p {
+    font-size: 0.9em;
+    color: #586069;
+    margin-bottom: 10px;
+}
+
+.repo-stats span {
+    font-size: 0.8em;
+    margin-right: 15px;
+    color: #586069;
+    display: inline-flex;
+    align-items: center;
+}
+
+.repo-stats span::before {
+    /* Ícones simples para estrelas, forks, issues */
+    content: "•";
+    margin-right: 4px;
+    font-size: 1.2em;
+    line-height: 1;
+}
+
+.repo-stats .star-count::before { content: "⭐"; }
+.repo-stats .fork-count::before { content: "🍴"; }
+.repo-stats .issue-count::before { content: "❗"; }
+
+
+/* BOTÃO DE REFRESH */
+.action-button {
+    width: 100%;
+    padding: 12px;
+    background-color: #050505; /* Verde */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.action-button:hover {
+    background-color: #131313;
+}

@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
             <div class="lane-header">
                 <span class="lane-title">/r/${subredditName}</span>
                 <div class="lane-options">
-                    <span class="options-icon">⋮</span>
+                    <span class="options-icon"><i class="fas fa-ellipsis-v"></i></span>
                     <div class="options-menu">
                         <button class="refresh-btn">Refresh</button>
                         <button class="delete-btn">Delete</button>

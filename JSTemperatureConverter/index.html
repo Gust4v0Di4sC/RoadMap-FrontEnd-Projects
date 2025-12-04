@@ -16,18 +16,27 @@
         </div>
 
 
-        <form class="form-inputs">
+        <form id="form-inputs" class="form-inputs">
             <input type="number" id="input-temperature" placeholder="0.00">
             <select name="from-unit" id="from-unit">
-                <option value="">Fahrenheit</option>
+                <option value=""></option>
+                <option value="f">Fahrenheit</option>
+                <option value="c">Celsius</option>
+                <option value="k">Kelvin</option>
             </select>
             <select name="to-unit" id="to-unit">
-                <option value="">Celsius</option>
+                <option value=""></option>
+                <option value="f">Fahrenheit</option>
+                <option value="c">Celsius</option>
+                <option value="k">Kelvin</option>
             </select>
-            <button type="submit">Convert</button>
+            <button id="convert" type="button">Convert</button>
         </form>
-    </section>
+
+       
     <script src="script.js"></script>
+    </section>
+  
 </body>
 
 </html>

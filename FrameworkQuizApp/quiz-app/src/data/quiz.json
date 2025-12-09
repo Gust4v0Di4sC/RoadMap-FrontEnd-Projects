@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "question": "Qual é a capital da França?",
+    "options": ["Londres", "Berlim", "Paris", "Madrid"],
+    "answer": "Paris"
+  },
+  {
+    "id": 2,
+    "question": "Qual planeta é conhecido como o Planeta Vermelho?",
+    "options": ["Terra", "Marte", "Júpiter", "Saturno"],
+    "answer": "Marte"
+  }
+]

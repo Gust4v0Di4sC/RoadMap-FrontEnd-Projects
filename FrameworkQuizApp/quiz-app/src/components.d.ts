@@ -12,7 +12,11 @@ export {}
 declare module 'vue' {
   export interface GlobalComponents {
     AppFooter: typeof import('./components/AppFooter.vue')['default']
+    CustomButton: typeof import('./components/common/CustomButton.vue')['default']
     HelloWorld: typeof import('./components/HelloWorld.vue')['default']
+    QuizQuestionCard: typeof import('./components/quiz/QuizQuestionCard.vue')['default']
+    QuizResultsCard: typeof import('./components/quiz/QuizResultsCard.vue')['default']
+    QuizStartCard: typeof import('./components/quiz/QuizStartCard.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
   }

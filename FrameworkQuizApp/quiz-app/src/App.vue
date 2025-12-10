@@ -1,68 +1,30 @@
 <template>
   <v-app>
-    <v-main class="d-flex align-center justify-center bg-grey-lighten-3">
+    <v-main class="d-flex align-center justify-center bg-grey-darken-3">
       <v-container fluid>
         <v-row justify="center">
           <v-col cols="12" md="6" sm="8">
 
-            <v-card v-if="gameState === 'start'" class="text-center pa-6">
-              <v-card-title class="text-h4 mb-4">Quiz Técnico</v-card-title>
-              <v-card-text>
-                Teste seus conhecimentos! Você terá 60 segundos por pergunta.
-              </v-card-text>
-              <v-card-actions class="justify-center">
-                <v-btn color="primary" size="large" @click="startQuiz">Começar Quiz</v-btn>
-              </v-card-actions>
-            </v-card>
+            <QuizStartCard v-if="gameState === 'start'" @start="startQuiz" />
 
-            <v-card v-else-if="gameState === 'playing'" class="pa-4">
-              <v-progress-linear
-                class="mb-4"
-                color="orange"
-                height="10"
-                :model-value="(timer / 60) * 100"
-                striped
-              />
+            <QuizQuestionCard
+              v-else-if="gameState === 'playing'"
+              :current-index="currentQuestionIndex"
+              :question="currentQuestion"
+              :selected-option="selectedAnswer"
+              :timer="timer"
+              :total-questions="questions.length"
+              @answer-selected="checkAnswer"
+              @next="nextQuestion"
+            />
 
-              <div class="d-flex justify-space-between align-center mb-4">
-                <span class="text-subtitle-1">Questão {{ currentQuestionIndex + 1 }} de {{ questions.length }}</span>
-                <v-chip color="secondary">Tempo: {{ timer }}s</v-chip>
-              </div>
-
-              <v-card-title class="text-h5 text-wrap mb-4">{{ currentQuestion.question }}</v-card-title>
-
-              <v-row>
-                <v-col v-for="option in currentQuestion.options" :key="option" cols="12">
-                  <v-btn
-                    block
-                    :color="getButtonColor(option)"
-                    :disabled="selectedAnswer !== null"
-                    size="large"
-                    variant="outlined"
-                    @click="checkAnswer(option)"
-                  >
-                    {{ option }}
-                  </v-btn>
-                </v-col>
-              </v-row>
-
-              <v-card-actions class="mt-4 justify-end">
-                <v-btn v-if="selectedAnswer !== null" color="primary" @click="nextQuestion">Próxima</v-btn>
-              </v-card-actions>
-            </v-card>
-
-            <v-card v-else-if="gameState === 'finished'" class="text-center pa-6">
-              <v-card-title class="text-h4">Fim do Quiz!</v-card-title>
-              <v-card-text class="text-h2 my-4">{{ score }} / {{ questions.length }}</v-card-text>
-              <v-list>
-                <v-list-item v-for="(res, index) in results" :key="index" :subtitle="'Certo: ' + res.correct">
-                  Questão {{ index + 1 }}: {{ res.status }}
-                </v-list-item>
-              </v-list>
-              <v-card-actions class="justify-center">
-                <v-btn color="primary" @click="resetQuiz">Tentar Novamente</v-btn>
-              </v-card-actions>
-            </v-card>
+            <QuizResultsCard
+              v-else-if="gameState === 'finished'"
+              :results="results"
+              :score="score"
+              :total-questions="questions.length"
+              @reset="resetQuiz"
+            />
 
           </v-col>
         </v-row>
@@ -73,6 +35,11 @@
 
 <script setup>
   import { computed, onUnmounted, ref } from 'vue'
+
+  import QuizQuestionCard from './components/quiz/QuizQuestionCard.vue'
+  import QuizResultsCard from './components/quiz/QuizResultsCard.vue'
+  import QuizStartCard from './components/quiz/QuizStartCard.vue'
+
   import quizData from './data/quiz.json'
 
   // Estado do Jogo

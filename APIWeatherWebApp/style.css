@@ -1,0 +1,87 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start; /* Altera para o topo para melhor visualização */
+    min-height: 100vh;
+    padding-top: 20px;
+}
+
+.container {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 800px;
+}
+
+h1 {
+    text-align: center;
+    color: #007bff;
+}
+
+.input-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#locationInput {
+    flex-grow: 1;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#searchButton, #refreshButton {
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#searchButton:hover, #refreshButton:hover {
+    background-color: #0056b3;
+}
+
+.weather-display {
+    border-top: 1px solid #eee;
+    padding-top: 20px;
+}
+
+.current-weather h2 {
+    color: #28a745;
+    margin-top: 0;
+}
+
+.hourly-list {
+    display: flex;
+    overflow-x: auto; /* Permite rolar horizontalmente */
+    gap: 10px;
+    padding: 10px 0;
+    white-space: nowrap; /* Impede a quebra de linha dos itens horários */
+}
+
+.hourly-item {
+    background: #e9ecef;
+    padding: 10px;
+    border-radius: 5px;
+    min-width: 150px; /* Garante que os itens sejam visíveis */
+    text-align: center;
+    flex-shrink: 0; /* Impede o encolhimento */
+}
+
+.loading, .error-message {
+    text-align: center;
+    padding: 20px;
+    background-color: #ffc107;
+    color: #333;
+    border-radius: 5px;
+    margin-top: 20px;
+}

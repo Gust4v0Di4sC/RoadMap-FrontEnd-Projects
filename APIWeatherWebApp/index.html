@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>App de Clima</title>
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+    <div class="container">
+        <h1>App de Clima</h1>
+
+        <div class="input-section">
+            <input type="text" id="locationInput" placeholder="Digite a localização (Ex: London,UK)">
+            <button id="searchButton">Buscar Clima</button>
+            <button id="refreshButton">Atualizar</button>
+        </div>
+
+        <div id="weather-display" class="weather-display" style="display: none;">
+            <section class="current-weather">
+                <h2>Clima Atual em <span id="locationName"></span></h2>
+                <p>Temperatura: <span id="currentTemp"></span></p>
+                <p>Condição: <span id="currentConditions"></span></p>
+                <p>Velocidade do Vento: <span id="currentWindSpeed"></span></p>
+                <p>Chance de Chuva: <span id="currentPrecipProb"></span></p>
+            </section>
+
+            <section class="hourly-forecast">
+                <h3>Previsão para as Próximas 24 Horas (e Passadas)</h3>
+                <div id="hourly-list" class="hourly-list">
+                </div>
+            </section>
+        </div>
+
+        <div id="loading" class="loading" style="display: none;">
+            <p>Carregando dados do clima...</p>
+        </div>
+
+        <div id="error-message" class="error-message" style="display: none;">
+            <p>Erro ao buscar o clima. Verifique a localização ou a chave da API.</p>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/motion@latest/dist/motion.js"></script>
+    <script>
+        const { animate, scroll, spring, stagger } = Motion
+    </script>
+    <script src="script.js"></script>
+</body>
+
+</html>

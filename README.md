@@ -26,4 +26,5 @@ Repositorio com todos os projetos feitos no site Roadmap.sh
     <li>https://roadmap.sh/projects/temperature-converter</li>
     <li>https://roadmap.sh/projects/pomodoro-timer</li>
     <li>https://roadmap.sh/projects/quiz-app</li>
+    <li>https://roadmap.sh/projects/weather-app</li>
 </ul>

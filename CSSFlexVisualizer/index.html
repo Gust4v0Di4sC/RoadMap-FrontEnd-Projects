@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Flexbox Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <aside>
+        <h2>Container</h2>
+
+        <div class="group">
+            <label>Direction</label>
+            <select id="direction">
+                <option value="row">row</option>
+                <option value="column">column</option>
+            </select>
+        </div>
+
+        <div class="group">
+            <label>Justify Content</label>
+            <select id="justify">
+                <option>flex-start</option>
+                <option>center</option>
+                <option>flex-end</option>
+                <option>space-between</option>
+                <option>space-around</option>
+                <option>space-evenly</option>
+            </select>
+        </div>
+
+        <div class="group">
+            <label>Align Items</label>
+            <select id="align">
+                <option>stretch</option>
+                <option>flex-start</option>
+                <option>center</option>
+                <option>flex-end</option>
+            </select>
+        </div>
+
+        <div class="group">
+            <label>Gap</label>
+            <input type="range" id="gap" min="0" max="48" value="12" />
+        </div>
+
+        <h2>Item Selecionado</h2>
+
+        <div class="group">
+            <label>Flex Basis (px)</label>
+            <input type="range" id="basis" min="40" max="400" value="120" />
+        </div>
+
+        <div class="group">
+            <label>Flex Grow</label>
+            <input type="range" id="grow" min="0" max="5" value="0" />
+        </div>
+
+        <div class="group">
+            <button id="add">+ Adicionar Item</button>
+        </div>
+    </aside>
+
+    <main>
+        <div id="preview" class="preview"></div>
+
+        <h3>CSS</h3>
+        <pre id="cssOut"></pre>
+
+        <h3>Tailwind</h3>
+        <pre id="twOut"></pre>
+
+        <h3>HTML</h3>
+        <pre id="htmlOut"></pre>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

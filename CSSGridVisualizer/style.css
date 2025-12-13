@@ -1,0 +1,175 @@
+ * { box-sizing: border-box; 
+    font-family: Inter, system-ui, -apple-system, sans-serif; 
+   }
+
+    body {
+      margin: 0;
+      background: #0f172a;
+      color: #e5e7eb;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    hr { border: none; border-top: 1px solid #1e293b; margin: 12px 0; }
+
+    :focus-visible { outline: 2px solid #38bdf8; outline-offset: 2px; }
+
+    .app { display: grid; grid-template-columns: 300px 1fr; height: 100%; }
+
+    /* SIDEBAR */
+    .panel {
+      background: #020617;
+      padding: 16px;
+      border-right: 1px solid #1e293b;
+      overflow-y: auto;
+    }
+
+    .panel h2 {
+      font-size: 13px;
+      margin: 14px 0 6px;
+      color: #38bdf8;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .hint { font-size: 11px; color: #94a3b8; margin-bottom: 10px; line-height: 1.4; }
+
+    .panel label {
+      display: flex;
+      flex-direction: column;
+      font-size: 12px;
+      margin-bottom: 10px;
+      color: #cbd5f5;
+    }
+
+    .panel input {
+      margin-top: 4px;
+      padding: 7px 8px;
+      border-radius: 8px;
+      border: 1px solid #1e293b;
+      background: #020617;
+      color: #fff;
+    }
+
+    .btn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 12px; }
+
+    .panel button {
+      width: 100%;
+      padding: 10px;
+      border-radius: 12px;
+      border: 1px solid transparent;
+      background: #38bdf8;
+      color: #020617;
+      font-weight: 800;
+      cursor: pointer;
+    }
+
+    .panel button.secondary {
+      background: transparent;
+      border-color: #1e293b;
+      color: #e5e7eb;
+    }
+
+    .panel button.danger {
+      background: #ef4444;
+      color: #0b1220;
+    }
+
+    .panel button:disabled {
+      opacity: 0.45;
+      cursor: not-allowed;
+    }
+
+    /* PREVIEW */
+    .preview { padding: 24px; overflow-y: auto; }
+
+    .grid {
+      display: grid;
+      min-height: 420px;
+      padding: 12px;
+      background: #020617;
+      border-radius: 16px;
+      border: 1px dashed #334155;
+    }
+
+    .item {
+      background: #1e293b;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      cursor: pointer;
+      user-select: none;
+      transition: 0.15s;
+      position: relative;
+    }
+
+    .item:hover { background: #334155; }
+
+    .item.selected {
+      outline: 2px solid #38bdf8;
+      background: #0ea5e9;
+      color: #020617;
+    }
+
+    /* CODE PREVIEW */
+    .code-preview {
+      margin-top: 24px;
+      background: #020617;
+      border-radius: 16px;
+      border: 1px solid #1e293b;
+      overflow: hidden;
+    }
+
+    .code-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    .tabs { display: flex; }
+
+    .tab {
+      background: none;
+      border: none;
+      color: #94a3b8;
+      padding: 10px 16px;
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.04em;
+    }
+
+    .tab.active { color: #38bdf8; border-bottom: 2px solid #38bdf8; }
+
+    .copy-btn {
+      margin-right: 12px;
+      padding: 6px 10px;
+      font-size: 12px;
+      border-radius: 10px;
+      border: 1px solid #1e293b;
+      background: #020617;
+      color: #e5e7eb;
+      cursor: pointer;
+      font-weight: 800;
+    }
+
+    .copy-btn.copied { color: #22c55e; border-color: #22c55e; }
+
+    .code-hint {
+      font-size: 11px;
+      color: #94a3b8;
+      padding: 8px 16px;
+      border-bottom: 1px solid #1e293b;
+    }
+
+    pre {
+      margin: 0;
+      padding: 16px;
+      font-size: 13px;
+      overflow-x: auto;
+      color: #e5e7eb;
+      line-height: 1.45;
+    }

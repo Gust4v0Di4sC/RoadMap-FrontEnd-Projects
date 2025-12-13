@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>CSS Grid Visualizer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app">
+
+        <!-- SIDEBAR -->
+        <aside class="panel">
+            <h2>Grid Container</h2>
+            <p class="hint">Configure o layout principal usando propriedades reais do CSS Grid.</p>
+
+            <label>
+                Grid Columns
+                <input id="cols" value="repeat(4, 1fr)" aria-label="Grid template columns" />
+            </label>
+
+            <label>
+                Grid Rows
+                <input id="rows" value="auto" aria-label="Grid template rows" />
+            </label>
+
+            <label>
+                Gap (px)
+                <input id="gap" type="number" value="12" aria-label="Grid gap" />
+            </label>
+
+            <hr />
+
+            <h2>Item Selecionado</h2>
+            <p class="hint">
+                Clique em um item no grid para ajustar sua posição. Dica: pressione <b>Delete</b> para remover.
+            </p>
+
+            <label>
+                Column Start
+                <input id="colStart" type="number" />
+            </label>
+
+            <label>
+                Column End
+                <input id="colEnd" type="number" />
+            </label>
+
+            <label>
+                Row Start
+                <input id="rowStart" type="number" />
+            </label>
+
+            <label>
+                Row End
+                <input id="rowEnd" type="number" />
+            </label>
+
+            <div class="btn-row">
+                <button id="addItem">Adicionar item</button>
+                <button id="removeItem" class="danger" disabled>Remover item</button>
+            </div>
+        </aside>
+
+        <!-- PREVIEW -->
+        <main class="preview">
+            <div id="grid" class="grid" aria-label="Visualização do grid">
+                <div class="item">1</div>
+                <div class="item">2</div>
+                <div class="item">3</div>
+                <div class="item">4</div>
+            </div>
+
+            <section class="code-preview" aria-label="Código gerado">
+                <div class="code-header">
+                    <div class="tabs">
+                        <button class="tab active" data-tab="css">CSS</button>
+                        <button class="tab" data-tab="tailwind">Tailwind</button>
+                        <button class="tab" data-tab="bootstrap">Bootstrap</button>
+                    </div>
+                    <button class="copy-btn" id="copyBtn">Copiar código</button>
+                </div>
+
+                <div class="code-hint" id="codeHint">CSS Grid puro.</div>
+                <pre><code id="code"></code></pre>
+            </section>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+.story-container {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  padding: 20px;
+  background: #fff;
+  white-space: nowrap;
+
+  .story-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    
+    .circle {
+      width: 70px;
+      height: 70px;
+      border-radius: 50%;
+      border: 3px solid #e1306c; // Cor estilo Instagram
+      padding: 2px;
+      background-clip: content-box;
+      background-size: cover;
+      background-position: center;
+      
+      &.plus {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 30px;
+        color: #555;
+        border-color: #ddd;
+        background-color: #f0f0f0;
+      }
+    }
+    
+    .label {
+      font-size: 12px;
+      margin-top: 5px;
+      color: #333;
+    }
+  }
+}

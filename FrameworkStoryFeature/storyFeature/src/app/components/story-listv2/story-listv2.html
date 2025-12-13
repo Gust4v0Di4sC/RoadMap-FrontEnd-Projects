@@ -1,0 +1,18 @@
+<div class="story-container">
+  <div class="story-item upload-btn" (click)="fileInput.click()">
+    <div class="circle plus">+</div>
+    <span class="label">Adicionar</span>
+    <input #fileInput type="file" (change)="onFileSelected($event)" accept="image/*" hidden>
+  </div>
+
+  <div class="story-item" *ngFor="let story of stories(); let i = index" (click)="openViewer(i)">
+    <div class="circle preview" [style.backgroundImage]="'url(' + story.imageUrl + ')'"></div>
+    <span class="label">Story {{i + 1}}</span>
+  </div>
+</div>
+
+<app-story-viewer 
+  *ngIf="isViewerOpen" 
+  [stories]="stories()"  [startIndex]="selectedIndex"
+  (close)="closeViewer()">
+</app-story-viewer>

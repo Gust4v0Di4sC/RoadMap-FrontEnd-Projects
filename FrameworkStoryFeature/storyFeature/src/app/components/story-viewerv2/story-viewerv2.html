@@ -1,0 +1,22 @@
+<div class="viewer-overlay" 
+     (touchstart)="onTouchStart($event)" 
+     (touchend)="onTouchEnd($event)">
+
+  <div class="progress-container">
+    <div class="progress-bar-bg" 
+         *ngFor="let story of stories; let i = index; trackBy: trackById">
+         <div class="progress-fill" 
+           [style.width.%]="getProgress(i)"
+           
+           [class.active]="i === currentIndex()"> 
+      </div>
+    </div>
+  </div>
+
+  <button class="close-btn" (click)="closeViewer()">✕</button>
+
+  <div class="nav-left" (click)="prev()"></div>
+  <div class="nav-right" (click)="next()"></div>
+
+  <img [src]="currentStory.imageUrl" class="main-image">
+</div>

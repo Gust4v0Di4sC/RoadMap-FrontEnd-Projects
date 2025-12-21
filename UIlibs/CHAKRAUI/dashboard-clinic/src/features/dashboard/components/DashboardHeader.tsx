@@ -8,11 +8,13 @@ import {
   CloseButton,
 } from "@chakra-ui/react";
 import { format } from "date-fns";
+import { ThemeToggle } from "../../ThemeToggle";
 
 const DashboardHeader = () => {
   return (
     <Flex justify="space-between" align="center" mb={6}>
       <Heading size="lg">Clínica ABC</Heading>
+      <ThemeToggle />
 
       <Text>{format(new Date(), "dd/MM/yyyy")}</Text>
 

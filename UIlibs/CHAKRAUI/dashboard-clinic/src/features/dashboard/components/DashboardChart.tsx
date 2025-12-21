@@ -1,32 +1,48 @@
-import { Box, Card } from '@chakra-ui/react';
-import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts';
+
+import { Box, Heading } from "@chakra-ui/react";
+import {
+  ResponsiveContainer,
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+} from "recharts";
 
 const data = [
-  { name: 'Seg', atendimentos: 10 },
-  { name: 'Ter', atendimentos: 30 },
-  { name: 'Qua', atendimentos: 45 },
-  { name: 'Qui', atendimentos: 60 },
-  { name: 'Sex', atendimentos: 55 },
-  { name: 'Sáb', atendimentos: 70 },
-  { name: 'Dom', atendimentos: 90 },
+  { name: "Jan", appointments: 140 },
+  { name: "Feb", appointments: 165 },
+  { name: "Mar", appointments: 195 },
+  { name: "Apr", appointments: 175 },
+  { name: "May", appointments: 210 },
+  { name: "Jun", appointments: 235 },
 ];
 
-const DashboardChart = () => {
+export function AppointmentTrendsCard() {
   return (
-    <Box>
-      <Card.Root>
-        <ResponsiveContainer width="100%" height={300}>
-          <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
+    <Box
+      bg="white"
+      borderRadius="22px"
+      p={{ base: 5, md: 6 }}
+      boxShadow="0 10px 24px rgba(20,60,120,0.10)"
+      border="1px solid rgba(210,230,255,0.6)"
+    >
+      <Heading size="md" mb={4} color="#0B1B33">
+        Appointment Trends
+      </Heading>
+
+      <Box h="320px">
+        <ResponsiveContainer width="100%" height="100%">
+          <LineChart data={data} margin={{ top: 10, right: 10, left: -10, bottom: 0 }}>
+            <CartesianGrid strokeDasharray="4 4" />
             <XAxis dataKey="name" />
             <YAxis />
             <Tooltip />
-            <Line type="monotone" dataKey="atendimentos" stroke="#8884d8" />
+            <Line type="monotone" dataKey="appointments" strokeWidth={3} dot />
           </LineChart>
         </ResponsiveContainer>
-      </Card.Root>
+      </Box>
     </Box>
   );
-};
-
-export default DashboardChart;
+}
